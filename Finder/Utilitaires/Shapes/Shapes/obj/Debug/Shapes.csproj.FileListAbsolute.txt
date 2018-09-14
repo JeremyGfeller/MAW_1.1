@@ -1,0 +1,34 @@
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\bin\Debug\Shapes.exe
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\bin\Debug\Shapes.pdb
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\obj\Debug\Shapes.frmShapes.resources
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\obj\Debug\Shapes.Properties.Resources.resources
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\obj\Debug\Shapes.csproj.GenerateResource.Cache
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\obj\Debug\Shapes.exe
+c:\users\cpnv\documents\visual studio 2013\Projects\Shapes\Shapes\obj\Debug\Shapes.pdb
+C:\Temp\Shapes\Shapes\obj\Debug\Shapes.exe
+C:\Temp\Shapes\Shapes\obj\Debug\Shapes.pdb
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes\Shapes\obj\Debug\Shapes.exe
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes\Shapes\obj\Debug\Shapes.pdb
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\obj\Debug\Shapes.exe
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\obj\Debug\Shapes.pdb
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\obj\Debug\Shapes.frmShapes.resources
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\obj\Debug\Shapes.Properties.Resources.resources
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\obj\Debug\Shapes.csproj.GenerateResource.Cache
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\bin\Debug\Shapes.exe
+Z:\CPNV\Modules\2015-2016\T1\ICT-226 (2a)\Shapes 2.0\Shapes\bin\Debug\Shapes.pdb
+C:\Temp\Shapes\Shapes\bin\Debug\Shapes.exe
+C:\Temp\Shapes\Shapes\bin\Debug\Shapes.pdb
+C:\Temp\Shapes\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
+C:\Temp\Shapes\Shapes\obj\Debug\Shapes.frmShapes.resources
+C:\Temp\Shapes\Shapes\obj\Debug\Shapes.Properties.Resources.resources
+C:\Temp\Shapes\Shapes\obj\Debug\Shapes.csproj.GenerateResource.Cache
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\obj\Debug\Shapes.exe
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\obj\Debug\Shapes.pdb
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\obj\Debug\Shapes.frmShapes.resources
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\obj\Debug\Shapes.Properties.Resources.resources
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\obj\Debug\Shapes.csproj.GenerateResource.Cache
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\bin\Debug\Shapes.exe
+P:\CPNV\Modules I-CT\ICT-226\Shapes\Shapes\bin\Debug\Shapes.pdb

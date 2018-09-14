@@ -1,0 +1,36 @@
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\bin\Debug\Race.exe.config
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\bin\Debug\Race.exe
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\bin\Debug\Race.pdb
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\obj\Debug\Race.csprojResolveAssemblyReference.cache
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\obj\Debug\Race.FormRace.resources
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\obj\Debug\Race.Properties.Resources.resources
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\obj\Debug\Race.csproj.GenerateResource.Cache
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\obj\Debug\Race.exe
+C:\Data\C#\Apps\Contrôle de compétences\Race\Race\obj\Debug\Race.pdb
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\bin\Debug\Race.exe.config
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\obj\Debug\Race.exe
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\obj\Debug\Race.pdb
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\bin\Debug\Race.exe
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\bin\Debug\Race.pdb
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\obj\Debug\Race.csprojResolveAssemblyReference.cache
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\obj\Debug\Race.FormRace.resources
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\obj\Debug\Race.Properties.Resources.resources
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Corrigés (Electronique)\KartRace\Race\obj\Debug\Race.csproj.GenerateResource.Cache
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\bin\Debug\Race.exe.config
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\obj\Debug\Race.exe
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\obj\Debug\Race.pdb
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\bin\Debug\Race.exe
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\bin\Debug\Race.pdb
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\obj\Debug\Race.csprojResolveAssemblyReference.cache
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\obj\Debug\Race.FormRace.resources
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\obj\Debug\Race.Properties.Resources.resources
+Z:\CPNV\Modules\Bases de modules\ICT 226\c - Exercices\Distribués aux élèves\Données\KartRace\Race\obj\Debug\Race.csproj.GenerateResource.Cache
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\bin\Debug\Race.exe.config
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\obj\Debug\Race.exe
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\obj\Debug\Race.pdb
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\bin\Debug\Race.exe
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\bin\Debug\Race.pdb
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\obj\Debug\Race.csprojResolveAssemblyReference.cache
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\obj\Debug\Race.FormRace.resources
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\obj\Debug\Race.Properties.Resources.resources
+P:\CPNV\2° Année\Modules ICT\ICT-226\KartRace\Race\obj\Debug\Race.csproj.GenerateResource.Cache

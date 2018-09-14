@@ -1,0 +1,16 @@
+Name, License, Model, NbSeats, Ready, Type, Renter, Km, NeedGas
+Vito 1,AI 3423,Vito,8,1,P,Avis,76543,0
+Vito 2,VD 54321,Vito,8,1,P,Avis,32424,0
+Vito 3,VD 131333,Vito,8,0,P,Avis,424234,0
+Vito 4,AI 3423,Vito,8,1,P,Avis,76543,0
+Vito 5,VD 54321,Vito,8,1,Avis,32424,0
+Vito 6,VD 131333,Vito,8,0,P,Avis,424234,0
+Vito 7,VD 413414,Vito,8,1,P,Avis,23442,1
+Vito 8,VD 54253,Vito,8,1,P,Avis,4324,0
+Matos 1,VD 76247,Transporter,2,1,P,Hertz,2342,0
+Matos 2,VD 76237,Transporter,2,1,P,Hertz,32142,0
+Matos 3,VD 83888,Transporter,2,1,P,Hertz,88788768768768768277,1
+Limo 1,VD 23847,Mercedes S5,4,1,P,Chappuis,6332,0
+Limo 2,VD 23442,Mercedes S5,4,1,P,Chappuis,42223,0
+Limo 3,VD 432422,Mercedes S5,4,1,P,Chappuis,4432,0
+Limo 4,VD 342344,Mercedes S5,4,1,P,Chappuis,6564,0

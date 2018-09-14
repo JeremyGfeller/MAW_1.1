@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Finder
 {
-    public partial class Form1 : Form
+    public partial class Finder : Form
     {
-        public Form1()
+        public Finder()
         {
             InitializeComponent();
         }

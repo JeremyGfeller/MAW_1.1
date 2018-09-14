@@ -1,6 +1,6 @@
 ﻿namespace Finder
 {
-    partial class Form1
+    partial class Finder
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -30,11 +30,11 @@
         {
             this.Directory = new System.Windows.Forms.Button();
             this.Author = new System.Windows.Forms.Label();
-            this.AuthorName = new System.Windows.Forms.TextBox();
+            this.AuthorValue = new System.Windows.Forms.TextBox();
             this.DateValue = new System.Windows.Forms.TextBox();
             this.Date = new System.Windows.Forms.Label();
             this.DirectoryPath = new System.Windows.Forms.TextBox();
-            this.ContentFile = new System.Windows.Forms.TextBox();
+            this.ContentValue = new System.Windows.Forms.TextBox();
             this.Content = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
             this.FilesView = new System.Windows.Forms.ListView();
@@ -60,13 +60,13 @@
             this.Author.TabIndex = 2;
             this.Author.Text = "Author";
             // 
-            // AuthorName
+            // AuthorValue
             // 
-            this.AuthorName.AccessibleName = "AuthorName";
-            this.AuthorName.Location = new System.Drawing.Point(118, 46);
-            this.AuthorName.Name = "AuthorName";
-            this.AuthorName.Size = new System.Drawing.Size(100, 20);
-            this.AuthorName.TabIndex = 3;
+            this.AuthorValue.AccessibleName = "AuthorValue";
+            this.AuthorValue.Location = new System.Drawing.Point(118, 46);
+            this.AuthorValue.Name = "AuthorValue";
+            this.AuthorValue.Size = new System.Drawing.Size(100, 20);
+            this.AuthorValue.TabIndex = 3;
             // 
             // DateValue
             // 
@@ -94,14 +94,14 @@
             this.DirectoryPath.Size = new System.Drawing.Size(100, 20);
             this.DirectoryPath.TabIndex = 6;
             // 
-            // ContentFile
+            // ContentValue
             // 
-            this.ContentFile.AccessibleName = "ContentFile";
-            this.ContentFile.Location = new System.Drawing.Point(118, 98);
-            this.ContentFile.Multiline = true;
-            this.ContentFile.Name = "ContentFile";
-            this.ContentFile.Size = new System.Drawing.Size(335, 69);
-            this.ContentFile.TabIndex = 8;
+            this.ContentValue.AccessibleName = "ContentValue";
+            this.ContentValue.Location = new System.Drawing.Point(118, 98);
+            this.ContentValue.Multiline = true;
+            this.ContentValue.Name = "ContentValue";
+            this.ContentValue.Size = new System.Drawing.Size(335, 69);
+            this.ContentValue.TabIndex = 8;
             // 
             // Content
             // 
@@ -133,23 +133,24 @@
             this.FilesView.TabIndex = 10;
             this.FilesView.UseCompatibleStateImageBehavior = false;
             // 
-            // Form1
+            // Finder
             // 
+            this.AccessibleName = "Finder";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.FilesView);
             this.Controls.Add(this.Search);
-            this.Controls.Add(this.ContentFile);
+            this.Controls.Add(this.ContentValue);
             this.Controls.Add(this.Content);
             this.Controls.Add(this.DirectoryPath);
             this.Controls.Add(this.DateValue);
             this.Controls.Add(this.Date);
-            this.Controls.Add(this.AuthorName);
+            this.Controls.Add(this.AuthorValue);
             this.Controls.Add(this.Author);
             this.Controls.Add(this.Directory);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Finder";
+            this.Text = "Finder";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,11 +160,11 @@
 
         private System.Windows.Forms.Button Directory;
         private System.Windows.Forms.Label Author;
-        private System.Windows.Forms.TextBox AuthorName;
+        private System.Windows.Forms.TextBox AuthorValue;
         private System.Windows.Forms.TextBox DateValue;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.TextBox DirectoryPath;
-        private System.Windows.Forms.TextBox ContentFile;
+        private System.Windows.Forms.TextBox ContentValue;
         private System.Windows.Forms.Label Content;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ListView FilesView;

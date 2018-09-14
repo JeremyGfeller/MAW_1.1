@@ -1,0 +1,7 @@
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\obj\Debug\PaleoDriversTest.csprojResolveAssemblyReference.cache
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDriversTest.dll
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDriversTest.pdb
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDrivers.exe
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDrivers.pdb
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\obj\Debug\PaleoDriversTest.dll
+C:\Data\C#\Apps\PaleoDrivers\PaleoDriversTest\obj\Debug\PaleoDriversTest.pdb
