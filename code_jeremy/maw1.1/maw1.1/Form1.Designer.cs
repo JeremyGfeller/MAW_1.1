@@ -34,14 +34,14 @@ namespace maw1._1
             this.components = new System.ComponentModel.Container();
             this.btnOpen = new System.Windows.Forms.Button();
             this.listView = new System.Windows.Forms.ListView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(1000, 487);
+            this.btnOpen.Location = new System.Drawing.Point(711, 12);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 0;
@@ -52,29 +52,13 @@ namespace maw1._1
             // listView
             // 
             this.listView.LargeImageList = this.imageList;
-            this.listView.Location = new System.Drawing.Point(12, 12);
+            this.listView.Location = new System.Drawing.Point(17, 79);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(1063, 457);
+            this.listView.Size = new System.Drawing.Size(769, 431);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 491);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
-            // txtPath
-            // 
-            this.txtPath.Location = new System.Drawing.Point(208, 487);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(608, 20);
-            this.txtPath.TabIndex = 3;
             // 
             // imageList
             // 
@@ -82,11 +66,27 @@ namespace maw1._1
             this.imageList.ImageSize = new System.Drawing.Size(32, 32);
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Directory";
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(69, 12);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(608, 20);
+            this.txtPath.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 522);
+            this.ClientSize = new System.Drawing.Size(804, 522);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
