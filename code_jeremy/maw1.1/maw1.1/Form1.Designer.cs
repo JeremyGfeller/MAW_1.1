@@ -37,25 +37,29 @@ namespace maw1._1
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnOpenFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(711, 12);
+            this.btnOpen.Location = new System.Drawing.Point(695, 12);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.Size = new System.Drawing.Size(31, 23);
             this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "Rechercher";
+            this.btnOpen.Text = "...";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // listView
             // 
             this.listView.LargeImageList = this.imageList;
-            this.listView.Location = new System.Drawing.Point(17, 79);
+            this.listView.Location = new System.Drawing.Point(17, 94);
             this.listView.MultiSelect = false;
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(769, 431);
+            this.listView.Size = new System.Drawing.Size(768, 47);
             this.listView.TabIndex = 1;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -82,11 +86,42 @@ namespace maw1._1
             this.txtPath.Size = new System.Drawing.Size(608, 20);
             this.txtPath.TabIndex = 3;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(710, 65);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Rechercher";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(17, 147);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(768, 382);
+            this.treeView1.TabIndex = 5;
+            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove);
+            // 
+            // btnOpenFile
+            // 
+            this.btnOpenFile.Location = new System.Drawing.Point(491, 64);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
+            this.btnOpenFile.TabIndex = 6;
+            this.btnOpenFile.Text = "ouvrir fichier";
+            this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 522);
+            this.ClientSize = new System.Drawing.Size(796, 538);
+            this.Controls.Add(this.btnOpenFile);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView);
@@ -114,6 +149,10 @@ namespace maw1._1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.ImageList imageList;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnOpenFile;
     }
 }
 
