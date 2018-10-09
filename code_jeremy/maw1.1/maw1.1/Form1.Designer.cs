@@ -41,6 +41,8 @@ namespace maw1._1
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnOpenFile = new System.Windows.Forms.Button();
+            this.txtSort = new System.Windows.Forms.TextBox();
+            this.LabelSort = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -114,11 +116,29 @@ namespace maw1._1
             this.btnOpenFile.UseVisualStyleBackColor = true;
             this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
+            // txtSort
+            // 
+            this.txtSort.Location = new System.Drawing.Point(69, 38);
+            this.txtSort.Name = "txtSort";
+            this.txtSort.Size = new System.Drawing.Size(100, 20);
+            this.txtSort.TabIndex = 7;
+            // 
+            // LabelSort
+            // 
+            this.LabelSort.AutoSize = true;
+            this.LabelSort.Location = new System.Drawing.Point(14, 45);
+            this.LabelSort.Name = "LabelSort";
+            this.LabelSort.Size = new System.Drawing.Size(45, 13);
+            this.LabelSort.TabIndex = 8;
+            this.LabelSort.Text = "FirstSort";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 538);
+            this.Controls.Add(this.LabelSort);
+            this.Controls.Add(this.txtSort);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnSearch);
@@ -153,6 +173,8 @@ namespace maw1._1
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnOpenFile;
+        private System.Windows.Forms.TextBox txtSort;
+        private System.Windows.Forms.Label LabelSort;
     }
 }
 

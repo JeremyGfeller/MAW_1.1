@@ -17,7 +17,7 @@ namespace maw1._1
         public Form1()
         {
             InitializeComponent();
-        }
+        } 
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
@@ -75,6 +75,7 @@ namespace maw1._1
 
         public void LoadDirectory(string Dir)
         {
+
             DirectoryInfo di = new DirectoryInfo(Dir);
             TreeNode tds = treeView1.Nodes.Add(di.Name);
             tds.Tag = di.FullName;
@@ -91,11 +92,39 @@ namespace maw1._1
             foreach (string file in Files)
             {
                 string author = System.IO.File.GetAccessControl(file).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString(); //System.Security.Principal.NTAccount
+                string SortedText = txtSort.Text;
                 FileInfo fi = new FileInfo(file);
+                /*
                 TreeNode tds = td.Nodes.Add(fi.Name);
                 tds.Tag = fi.FullName;
                 tds.StateImageIndex = 1;
                 tds.Text = fi.Name + author;
+                */
+
+                if (SortedText != "")
+                {
+                    if(author == SortedText)
+                    {
+                        TreeNode tds = td.Nodes.Add(fi.Name);
+                        tds.Tag = fi.FullName;
+                        tds.StateImageIndex = 1;
+                        tds.Text = fi.Name + author + SortedText + "Correspond";
+                    }
+                    else
+                    {
+                        TreeNode tds = td.Nodes.Add(fi.Name);
+                        tds.Tag = fi.FullName;
+                        tds.StateImageIndex = 1;
+                        tds.Text = fi.Name + author + SortedText + "Correspond pas";
+                    }
+                }
+                else
+                {
+                    TreeNode tds = td.Nodes.Add(fi.Name);
+                    tds.Tag = fi.FullName;
+                    tds.StateImageIndex = 1;
+                    tds.Text = fi.Name + author;
+                }
             }
         }
 
