@@ -33,16 +33,15 @@ namespace maw1._1
         {
             this.components = new System.ComponentModel.Container();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.listView = new System.Windows.Forms.ListView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnOpenFile = new System.Windows.Forms.Button();
             this.txtSort = new System.Windows.Forms.TextBox();
             this.LabelSort = new System.Windows.Forms.Label();
+            this.txtSort2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -54,17 +53,6 @@ namespace maw1._1
             this.btnOpen.Text = "...";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // listView
-            // 
-            this.listView.LargeImageList = this.imageList;
-            this.listView.Location = new System.Drawing.Point(17, 94);
-            this.listView.MultiSelect = false;
-            this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(768, 47);
-            this.listView.TabIndex = 1;
-            this.listView.UseCompatibleStateImageBehavior = false;
-            this.listView.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // imageList
             // 
@@ -90,7 +78,7 @@ namespace maw1._1
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(710, 65);
+            this.btnSearch.Location = new System.Drawing.Point(709, 118);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
@@ -105,16 +93,6 @@ namespace maw1._1
             this.treeView1.Size = new System.Drawing.Size(768, 382);
             this.treeView1.TabIndex = 5;
             this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove);
-            // 
-            // btnOpenFile
-            // 
-            this.btnOpenFile.Location = new System.Drawing.Point(491, 64);
-            this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
-            this.btnOpenFile.TabIndex = 6;
-            this.btnOpenFile.Text = "ouvrir fichier";
-            this.btnOpenFile.UseVisualStyleBackColor = true;
-            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // txtSort
             // 
@@ -132,19 +110,25 @@ namespace maw1._1
             this.LabelSort.TabIndex = 8;
             this.LabelSort.Text = "FirstSort";
             // 
+            // txtSort2
+            // 
+            this.txtSort2.Location = new System.Drawing.Point(69, 68);
+            this.txtSort2.Name = "txtSort2";
+            this.txtSort2.Size = new System.Drawing.Size(100, 20);
+            this.txtSort2.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 538);
+            this.Controls.Add(this.txtSort2);
             this.Controls.Add(this.LabelSort);
             this.Controls.Add(this.txtSort);
-            this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView);
             this.Controls.Add(this.btnOpen);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -155,26 +139,18 @@ namespace maw1._1
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //throw new NotImplementedException();
-            if (listView.FocusedItem != null)
-                Process.Start(listFiles[listView.FocusedItem.Index]);
-        }
-
         #endregion
 
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.ImageList imageList;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.TextBox txtSort;
         private System.Windows.Forms.Label LabelSort;
+        private System.Windows.Forms.TextBox txtSort2;
     }
 }
 

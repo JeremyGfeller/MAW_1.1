@@ -22,7 +22,6 @@ namespace maw1._1
         private void btnOpen_Click(object sender, EventArgs e)
         {
             listFiles.Clear();
-            listView.Items.Clear();
 
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 
@@ -95,16 +94,33 @@ namespace maw1._1
                 string SortedText = txtSort.Text;
                 FileInfo fi = new FileInfo(file);
 
-                bool SortedResult = author.ToLower().Contains(SortedText.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                DateTime GetDateCreation = File.GetCreationTime(file);
+                string DateCreationInString = GetDateCreation.ToString();
 
-                if (SortedText != "")
+                bool SortedResult = author.ToLower().Contains(SortedText.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                
+                string DateCreation = DateTime.Parse(DateCreationInString).ToString("dd.MM.yyyy");
+                string SortedText2 = txtSort2.Text;
+                bool SortedResultDate = DateCreation.Contains(SortedText2); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+
+
+
+
+                // Sort by author
+                /*if(SortedText != "")
                 {
                     if(SortedResult)  //Test of the string
                     {
                         TreeNode tds = td.Nodes.Add(fi.Name);
                         tds.Tag = fi.FullName;
                         tds.StateImageIndex = 1;
-                        tds.Text = fi.Name + author;
+                        tds.Text = fi.Name + " - " + creation;
+                    }
+                    else
+                    {
+                        TreeNode tds = td.Nodes.Add(fi.Name);
+                        tds.Text = "Aucun fichier trouver avec la recherche → " + SortedText;
+                        break;
                     }
                 }
                 else
@@ -112,7 +128,33 @@ namespace maw1._1
                     TreeNode tds = td.Nodes.Add(fi.Name);
                     tds.Tag = fi.FullName;
                     tds.StateImageIndex = 1;
-                    tds.Text = fi.Name + author;
+                    tds.Text = fi.Name + " - " + creation;
+                }*/
+
+
+                // Sort by date creation of file
+                if (SortedText2 != "")
+                {
+                    if(SortedResultDate)
+                    {
+                        TreeNode tds = td.Nodes.Add(fi.Name);
+                        tds.Tag = fi.FullName;
+                        tds.StateImageIndex = 1;
+                        tds.Text = fi.Name + " - " + DateCreation;
+                    }
+                    else
+                    {
+                        TreeNode tds = td.Nodes.Add(fi.Name);
+                        tds.Text = "Aucun fichier trouver avec la recherche → " + SortedText2;
+                        break;
+                    }
+                }
+                else
+                {
+                    TreeNode tds = td.Nodes.Add(fi.Name);
+                    tds.Tag = fi.FullName;
+                    tds.StateImageIndex = 1;
+                    tds.Text = fi.Name + " - " + DateCreation;
                 }
             }
         }
@@ -150,10 +192,6 @@ namespace maw1._1
             {
                 this.toolTip1.SetToolTip(this.treeView1, "");
             }
-        }
-        private void btnOpenFile_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
