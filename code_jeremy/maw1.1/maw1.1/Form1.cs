@@ -94,28 +94,17 @@ namespace maw1._1
                 string author = System.IO.File.GetAccessControl(file).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString(); //System.Security.Principal.NTAccount
                 string SortedText = txtSort.Text;
                 FileInfo fi = new FileInfo(file);
-                /*
-                TreeNode tds = td.Nodes.Add(fi.Name);
-                tds.Tag = fi.FullName;
-                tds.StateImageIndex = 1;
-                tds.Text = fi.Name + author;
-                */
+
+                bool SortedResult = author.Contains(SortedText); //Return 1 if the string countains the sort typed by the user
 
                 if (SortedText != "")
                 {
-                    if(author == SortedText)
+                    if(SortedResult)  //Test of the string
                     {
                         TreeNode tds = td.Nodes.Add(fi.Name);
                         tds.Tag = fi.FullName;
                         tds.StateImageIndex = 1;
-                        tds.Text = fi.Name + author + SortedText + "Correspond";
-                    }
-                    else
-                    {
-                        TreeNode tds = td.Nodes.Add(fi.Name);
-                        tds.Tag = fi.FullName;
-                        tds.StateImageIndex = 1;
-                        tds.Text = fi.Name + author + SortedText + "Correspond pas";
+                        tds.Text = fi.Name + author;
                     }
                 }
                 else
