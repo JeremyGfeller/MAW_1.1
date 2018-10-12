@@ -95,7 +95,7 @@ namespace maw1._1
                 string SortedText = txtSort.Text;
                 FileInfo fi = new FileInfo(file);
 
-                bool SortedResult = author.Contains(SortedText); //Return 1 if the string countains the sort typed by the user
+                bool SortedResult = author.ToLower().Contains(SortedText.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
 
                 if (SortedText != "")
                 {
