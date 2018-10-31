@@ -42,6 +42,9 @@ namespace maw1._1
             this.txtSort = new System.Windows.Forms.TextBox();
             this.LabelSort = new System.Windows.Forms.Label();
             this.txtSort2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSort3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOpen
@@ -104,24 +107,52 @@ namespace maw1._1
             // LabelSort
             // 
             this.LabelSort.AutoSize = true;
-            this.LabelSort.Location = new System.Drawing.Point(14, 45);
+            this.LabelSort.Location = new System.Drawing.Point(14, 41);
             this.LabelSort.Name = "LabelSort";
-            this.LabelSort.Size = new System.Drawing.Size(45, 13);
+            this.LabelSort.Size = new System.Drawing.Size(38, 13);
             this.LabelSort.TabIndex = 8;
-            this.LabelSort.Text = "FirstSort";
+            this.LabelSort.Text = "Author";
             // 
             // txtSort2
             // 
-            this.txtSort2.Location = new System.Drawing.Point(69, 68);
+            this.txtSort2.Location = new System.Drawing.Point(69, 64);
             this.txtSort2.Name = "txtSort2";
             this.txtSort2.Size = new System.Drawing.Size(100, 20);
             this.txtSort2.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Date";
+            // 
+            // txtSort3
+            // 
+            this.txtSort3.Location = new System.Drawing.Point(69, 90);
+            this.txtSort3.Name = "txtSort3";
+            this.txtSort3.Size = new System.Drawing.Size(100, 20);
+            this.txtSort3.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "FileName";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 538);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtSort3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSort2);
             this.Controls.Add(this.LabelSort);
             this.Controls.Add(this.txtSort);
@@ -151,6 +182,9 @@ namespace maw1._1
         private System.Windows.Forms.TextBox txtSort;
         private System.Windows.Forms.Label LabelSort;
         private System.Windows.Forms.TextBox txtSort2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSort3;
+        private System.Windows.Forms.Label label3;
     }
 }
 

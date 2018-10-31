@@ -90,12 +90,12 @@ namespace maw1._1
             // Loop through them to see files  
             foreach (string file in Files)
             {
-                string author = System.IO.File.GetAccessControl(file).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString(); //System.Security.Principal.NTAccount
-                string SortedText = txtSort.Text;
+                string author = System.IO.File.GetAccessControl(file).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString(); //Return the author of the file
+                string SortedText = txtSort.Text; 
                 FileInfo fi = new FileInfo(file);
 
-                DateTime GetDateCreation = File.GetCreationTime(file);
-                string DateCreationInString = GetDateCreation.ToString();
+                DateTime GetDateCreation = File.GetCreationTime(file); //Return the date of creation of the file
+                string DateCreationInString = GetDateCreation.ToString(); //Store the date in a string
 
                 bool SortedResult = author.ToLower().Contains(SortedText.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 
@@ -103,53 +103,45 @@ namespace maw1._1
                 string SortedText2 = txtSort2.Text;
                 bool SortedResultDate = DateCreation.Contains(SortedText2); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
 
+                string FileName = Path.GetFileName(file); //Return the name + extension of the file
+                string SortedText3 = txtSort3.Text; //Store the value of the textbox in SortedText3
+                bool SortedResultName = FileName.Contains(SortedText3); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                
+                int NbSortsUsed = 0; //Variable to count the number of sorts
+                int NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
 
-
-
-                // Sort by author
-                /*if(SortedText != "")
+                //Sort by author
+                if(SortedText != "") //If the sort isn't empty, increment NbSortsUsed
                 {
-                    if(SortedResult)  //Test of the string
+                    NbSortsUsed++;
+                    if (SortedResult) //If the sort corresponds, increment NbSortsRight
                     {
-                        TreeNode tds = td.Nodes.Add(fi.Name);
-                        tds.Tag = fi.FullName;
-                        tds.StateImageIndex = 1;
-                        tds.Text = fi.Name + " - " + creation;
-                    }
-                    else
-                    {
-                        TreeNode tds = td.Nodes.Add(fi.Name);
-                        tds.Text = "Aucun fichier trouver avec la recherche → " + SortedText;
-                        break;
+                        NbSortsRight++;
                     }
                 }
-                else
+                
+                //Sort by date of creation file
+                if(SortedText2 != "")
                 {
-                    TreeNode tds = td.Nodes.Add(fi.Name);
-                    tds.Tag = fi.FullName;
-                    tds.StateImageIndex = 1;
-                    tds.Text = fi.Name + " - " + creation;
-                }*/
-
-
-                // Sort by date creation of file
-                if (SortedText2 != "")
-                {
-                    if(SortedResultDate)
+                    NbSortsUsed++;
+                    if (SortedResultDate)
                     {
-                        TreeNode tds = td.Nodes.Add(fi.Name);
-                        tds.Tag = fi.FullName;
-                        tds.StateImageIndex = 1;
-                        tds.Text = fi.Name + " - " + DateCreation;
-                    }
-                    else
-                    {
-                        TreeNode tds = td.Nodes.Add(fi.Name);
-                        tds.Text = "Aucun fichier trouver avec la recherche → " + SortedText2;
-                        break;
+                        NbSortsRight++;
                     }
                 }
-                else
+
+                //Sort by file name
+                if (SortedText3 != "")
+                {
+                    NbSortsUsed++;
+                    if (SortedResultName)
+                    {
+                        NbSortsRight++;
+                    }
+                }
+
+                //Compares if the numbers of sorts and the nombers of items who corresponds with the sort are similar
+                if(NbSortsUsed == NbSortsRight)
                 {
                     TreeNode tds = td.Nodes.Add(fi.Name);
                     tds.Tag = fi.FullName;
