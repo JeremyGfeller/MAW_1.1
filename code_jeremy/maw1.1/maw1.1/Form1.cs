@@ -111,10 +111,12 @@ namespace maw1._1
 
 
                 //Chose read method
-                bool ReadMethod = FileName.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                bool ReadMethodWord = FileName.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                bool ReadMethodExcel = FileName.ToLower().Contains(".xls"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+
                 string SortedText4 = txtSort4.Text; //Store the value of the textbox in SortedText4
                 bool SortedContent = false; //Create the bool variable before the if to prevent of errors
-                if (ReadMethod)
+                /*if (ReadMethodWord)
                 {
                     Microsoft.Office.Interop.Word.Application Word = new Microsoft.Office.Interop.Word.Application(); //Initialise the application
                     object miss = System.Reflection.Missing.Value; //Ref for open word doc
@@ -127,8 +129,38 @@ namespace maw1._1
                         WordText += " \r\n " + docs.Paragraphs[i + 1].Range.Text.ToString();
                     }
                     docs.Close(); //Close document
-                    //======================= END TEST WORD ===============================
                     SortedContent = WordText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                }
+                else*/ if(ReadMethodExcel) 
+                {
+
+                    Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); //Initialise the application
+                    Microsoft.Office.Interop.Excel.Workbook xlWorkbook = Excel.Workbooks.Open(file);
+                    Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+                    Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+                    string ExcelTempText = "";
+                    string ExcelText = "";
+                    int rCnt;
+                    int cCnt;
+                    int rw = 0;
+                    int cl = 0;
+
+                    rw = xlRange.Rows.Count;
+                    cl = xlRange.Columns.Count;
+
+                    for (rCnt = 1; rCnt <= rw; rCnt++)
+                    {
+                        for (cCnt = 1; cCnt <= cl; cCnt++)
+                        {
+                            ExcelTempText = (string)(xlRange.Cells[rCnt, cCnt] as Microsoft.Office.Interop.Excel.Range).Value2;
+                            ExcelText += " \r\n " + ExcelTempText;
+                        }
+                    }
+
+                    xlWorkbook.Close(true, null, null);
+                    Excel.Quit();
+                    SortedContent = ExcelText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 }
                 else
                 {
