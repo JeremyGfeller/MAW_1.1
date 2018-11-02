@@ -90,28 +90,63 @@ namespace maw1._1
             // Loop through them to see files  
             foreach (string file in Files)
             {
+                FileInfo fi = new FileInfo(file); //Used to get informations about the files
+
+                //Author
                 string author = System.IO.File.GetAccessControl(file).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString(); //Return the author of the file
-                string SortedText = txtSort.Text; 
-                FileInfo fi = new FileInfo(file);
-
-                DateTime GetDateCreation = File.GetCreationTime(file); //Return the date of creation of the file
-                string DateCreationInString = GetDateCreation.ToString(); //Store the date in a string
-
+                string SortedText = txtSort.Text; //Store the value of the textbox in SortedText
                 bool SortedResult = author.ToLower().Contains(SortedText.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 
-                string DateCreation = DateTime.Parse(DateCreationInString).ToString("dd.MM.yyyy");
-                string SortedText2 = txtSort2.Text;
-                bool SortedResultDate = DateCreation.Contains(SortedText2); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                //Date
+                DateTime GetDateCreation = File.GetCreationTime(file); //Return the date of creation of the file
+                string DateCreationInString = GetDateCreation.ToString(); //Store the date in a string
+                string DateCreation = DateTime.Parse(DateCreationInString).ToString("dd.MM.yyyy"); //Change the format of the date
+                string SortedText2 = txtSort2.Text; //Store the value of the textbox in SortedText2
+                bool SortedResultDate = DateCreation.Contains(SortedText2); //Return 1 if the string countains the sort typed by the user.
 
+                //File name
                 string FileName = Path.GetFileName(file); //Return the name + extension of the file
                 string SortedText3 = txtSort3.Text; //Store the value of the textbox in SortedText3
-                bool SortedResultName = FileName.Contains(SortedText3); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-                
+                bool SortedResultName = FileName.ToLower().Contains(SortedText3.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+
+
+                //Chose read method
+                bool ReadMethod = FileName.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                string SortedText4 = txtSort4.Text; //Store the value of the textbox in SortedText4
+                bool SortedContent = false; //Create the bool variable before the if to prevent of errors
+                if (ReadMethod)
+                {
+                    Microsoft.Office.Interop.Word.Application Word = new Microsoft.Office.Interop.Word.Application(); //Initialise the application
+                    object miss = System.Reflection.Missing.Value; //Ref for open word doc
+                    object path = file; //Stock the path of the file
+                    object readOnly = true; //Put the file in read only
+                    Microsoft.Office.Interop.Word.Document docs = Word.Documents.Open(ref path, ref miss, ref readOnly, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss); //Open application with all parameters
+                    string WordText = ""; //Variable to store the text in the document
+                    for (int i = 0; i < docs.Paragraphs.Count; i++) //Store the text of each paragraph
+                    {
+                        WordText += " \r\n " + docs.Paragraphs[i + 1].Range.Text.ToString();
+                    }
+                    docs.Close(); //Close document
+                    //======================= END TEST WORD ===============================
+                    SortedContent = WordText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                }
+                else
+                {
+
+                    //Content
+                    string ReadText = System.IO.File.ReadAllText(file); //Return the text as one string
+                    SortedContent = ReadText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                }
+
+
+
+
+                //Variables used for compare how many sorts are used with how many sorts corresponds with the items found
                 int NbSortsUsed = 0; //Variable to count the number of sorts
                 int NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
-
+              
                 //Sort by author
-                if(SortedText != "") //If the sort isn't empty, increment NbSortsUsed
+                if (SortedText != "") //If the sort isn't empty, increment NbSortsUsed
                 {
                     NbSortsUsed++;
                     if (SortedResult) //If the sort corresponds, increment NbSortsRight
@@ -135,6 +170,16 @@ namespace maw1._1
                 {
                     NbSortsUsed++;
                     if (SortedResultName)
+                    {
+                        NbSortsRight++;
+                    }
+                }
+
+                //Sort by content
+                if (SortedText4 != "")
+                {
+                    NbSortsUsed++;
+                    if (SortedContent)
                     {
                         NbSortsRight++;
                     }
