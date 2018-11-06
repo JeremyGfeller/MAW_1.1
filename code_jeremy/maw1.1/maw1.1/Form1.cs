@@ -113,10 +113,10 @@ namespace maw1._1
                 //Chose read method
                 bool ReadMethodWord = FileName.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 bool ReadMethodExcel = FileName.ToLower().Contains(".xls"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-
+               
                 string SortedText4 = txtSort4.Text; //Store the value of the textbox in SortedText4
                 bool SortedContent = false; //Create the bool variable before the if to prevent of errors
-                /*if (ReadMethodWord)
+                if (ReadMethodWord)
                 {
                     Microsoft.Office.Interop.Word.Application Word = new Microsoft.Office.Interop.Word.Application(); //Initialise the application
                     object miss = System.Reflection.Missing.Value; //Ref for open word doc
@@ -131,7 +131,7 @@ namespace maw1._1
                     docs.Close(); //Close document
                     SortedContent = WordText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 }
-                else*/ if(ReadMethodExcel) 
+                else if(ReadMethodExcel) 
                 {
 
                     Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); //Initialise the application
