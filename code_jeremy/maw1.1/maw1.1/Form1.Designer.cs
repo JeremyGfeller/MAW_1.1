@@ -97,7 +97,6 @@ namespace maw1._1
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(768, 382);
             this.treeView1.TabIndex = 5;
-            this.treeView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseMove);
             // 
             // txtSort
             // 

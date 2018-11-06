@@ -113,66 +113,11 @@ namespace maw1._1
                 //Chose read method
                 bool ReadMethodWord = FileName.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 bool ReadMethodExcel = FileName.ToLower().Contains(".xls"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-               
+                bool ReadMethodPowerPoint = FileName.ToLower().Contains(".ppt"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                
+                //Content of file
                 string SortedText4 = txtSort4.Text; //Store the value of the textbox in SortedText4
-                bool SortedContent = false; //Create the bool variable before the if to prevent of errors
-                if (ReadMethodWord)
-                {
-                    Microsoft.Office.Interop.Word.Application Word = new Microsoft.Office.Interop.Word.Application(); //Initialise the application
-                    object miss = System.Reflection.Missing.Value; //Ref for open word doc
-                    object path = file; //Stock the path of the file
-                    object readOnly = true; //Put the file in read only
-                    Microsoft.Office.Interop.Word.Document docs = Word.Documents.Open(ref path, ref miss, ref readOnly, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss); //Open application with all parameters
-                    string WordText = ""; //Variable to store the text in the document
-                    for (int i = 0; i < docs.Paragraphs.Count; i++) //Store the text of each paragraph
-                    {
-                        WordText += " \r\n " + docs.Paragraphs[i + 1].Range.Text.ToString();
-                    }
-                    docs.Close(); //Close document
-                    SortedContent = WordText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-                }
-                else if(ReadMethodExcel) 
-                {
-
-                    Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); //Initialise the application
-                    Microsoft.Office.Interop.Excel.Workbook xlWorkbook = Excel.Workbooks.Open(file);
-                    Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-                    Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
-
-                    string ExcelTempText = "";
-                    string ExcelText = "";
-                    int rCnt;
-                    int cCnt;
-                    int rw = 0;
-                    int cl = 0;
-
-                    rw = xlRange.Rows.Count;
-                    cl = xlRange.Columns.Count;
-
-                    for (rCnt = 1; rCnt <= rw; rCnt++)
-                    {
-                        for (cCnt = 1; cCnt <= cl; cCnt++)
-                        {
-                            ExcelTempText = (string)(xlRange.Cells[rCnt, cCnt] as Microsoft.Office.Interop.Excel.Range).Value2;
-                            ExcelText += " \r\n " + ExcelTempText;
-                        }
-                    }
-
-                    xlWorkbook.Close(true, null, null);
-                    Excel.Quit();
-                    SortedContent = ExcelText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-                }
-                else
-                {
-
-                    //Content
-                    string ReadText = System.IO.File.ReadAllText(file); //Return the text as one string
-                    SortedContent = ReadText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-                }
-
-
-
-
+                
                 //Variables used for compare how many sorts are used with how many sorts corresponds with the items found
                 int NbSortsUsed = 0; //Variable to count the number of sorts
                 int NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
@@ -211,6 +156,88 @@ namespace maw1._1
                 if (SortedText4 != "")
                 {
                     NbSortsUsed++;
+                    bool SortedContent = false; //Create the bool variable before the if to prevent of errors and shows if content were corresponding 
+
+                    if (ReadMethodWord)
+                    {
+                        Microsoft.Office.Interop.Word.Application Word = new Microsoft.Office.Interop.Word.Application(); //Initialise the application
+                        object miss = System.Reflection.Missing.Value; //Ref for open word doc
+                        object path = file; //Stock the path of the file
+                        object readOnly = true; //Put the file in read only
+                        Microsoft.Office.Interop.Word.Document docs = Word.Documents.Open(ref path, ref miss, ref readOnly, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss); //Open application with all parameters
+                        string WordText = ""; //Variable to store the text in the document
+                        for (int i = 0; i < docs.Paragraphs.Count; i++) //Store the text of each paragraph
+                        {
+                            WordText += " \r\n " + docs.Paragraphs[i + 1].Range.Text.ToString();
+                        }
+                        docs.Close(); //Close document
+                        SortedContent = WordText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                    }
+                    else if (ReadMethodExcel)
+                    {
+
+                        Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application(); //Initialise the application
+                        Microsoft.Office.Interop.Excel.Workbook xlWorkbook = Excel.Workbooks.Open(file);
+                        Microsoft.Office.Interop.Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+                        Microsoft.Office.Interop.Excel.Range xlRange = xlWorksheet.UsedRange;
+
+                        string ExcelTempText = "";
+                        string ExcelText = "";
+                        int rCnt;
+                        int cCnt;
+                        int rw = 0;
+                        int cl = 0;
+
+                        rw = xlRange.Rows.Count;
+                        cl = xlRange.Columns.Count;
+
+                        for (rCnt = 1; rCnt <= rw; rCnt++)
+                        {
+                            for (cCnt = 1; cCnt <= cl; cCnt++)
+                            {
+                                ExcelTempText = (string)(xlRange.Cells[rCnt, cCnt] as Microsoft.Office.Interop.Excel.Range).Value2;
+                                ExcelText += " \r\n " + ExcelTempText;
+                            }
+                        }
+
+                        xlWorkbook.Close(true, null, null);
+                        Excel.Quit();
+                        SortedContent = ExcelText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                    }
+                    else
+                    {
+                        //Content
+                        string ReadText = System.IO.File.ReadAllText(file); //Return the text as one string
+                        SortedContent = ReadText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                    }
+                /*else if (ReadMethodPowerPoint)
+                {
+                    Microsoft.Office.Interop.PowerPoint.Application PowerPoint_App = new Microsoft.Office.Interop.PowerPoint.Application();
+                    Microsoft.Office.Interop.PowerPoint.Presentations multi_presentations = PowerPoint_App.Presentations;
+                    Microsoft.Office.Interop.PowerPoint.Presentation presentation = multi_presentations.Open(file);
+
+                    string PowerPointText = "";
+                    for (int i = 0; i < presentation.Slides.Count; i++)
+                    {
+                        foreach (var item in presentation.Slides[i + 1].Shapes)
+                        {
+                            var shape = (Microsoft.Office.Interop.PowerPoint.Shape)item;
+                            if (shape.HasTextFrame == Microsoft.Office.Core.MsoTriState.msoTrue)
+                            {
+                                if (shape.TextFrame.HasText == Microsoft.Office.Core.MsoTriState.msoTrue)
+                                {
+                                    var textRange = shape.TextFrame.TextRange;
+                                    var text = textRange.Text;
+                                    PowerPointText += text + " ";
+
+                                }
+                            }
+                        }
+                    }
+                    PowerPoint_App.Quit();
+                    SortedContent = PowerPointText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                */
+
                     if (SortedContent)
                     {
                         NbSortsRight++;
@@ -223,7 +250,7 @@ namespace maw1._1
                     TreeNode tds = td.Nodes.Add(fi.Name);
                     tds.Tag = fi.FullName;
                     tds.StateImageIndex = 1;
-                    tds.Text = fi.Name + " - " + DateCreation;
+                    tds.Text = fi.Name + " - " + author + " - " + DateCreation;
                 }
             }
         }
