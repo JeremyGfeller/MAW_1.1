@@ -27,38 +27,6 @@ namespace maw1._1
                 
             if (fbd.ShowDialog() == DialogResult.OK)
                 txtPath.Text = fbd.SelectedPath;
-
-            /*using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            {
-                if(fbd.ShowDialog() == DialogResult.OK)
-                {
-                    string[] files = Directory.GetFiles(fbd.SelectedPath);
-                    string[] directorys = Directory.GetDirectories(fbd.SelectedPath);
-
-                    foreach (string file in files)
-                    {
-                        imageList.Images.Add(System.Drawing.Icon.ExtractAssociatedIcon(file));
-                        FileInfo fi = new FileInfo(file);
-                        listFiles.Add(fi.FullName);
-                        listView.Items.Add(fi.Name, imageList.Images.Count - 1);
-                        //https://www.youtube.com/watch?v=EQa_3YiUicw
-                    }
-
-                    foreach (string directory in directorys)
-                    {
-                        FileInfo fi = new FileInfo(directory);
-                        listFiles.Add(fi.FullName);
-                        listView.Items.Add(fi.Name, Path.GetFileName(directory));
-                    }
-
-                    txtPath.Text = fbd.SelectedPath;
-
-                    //https://www.c-sharpcorner.com/article/display-sub-directories-and-files-in-treeview/
-
-                    // A VOIR !!
-                    // https://www.youtube.com/watch?v=aonRoEokQeY
-                }
-            }*/
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -288,6 +256,14 @@ namespace maw1._1
             {
                 this.toolTip1.SetToolTip(this.treeView1, "");
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSort.Clear();
+            txtSort2.Clear();
+            txtSort3.Clear();
+            txtSort4.Clear();
         }
     }
 }
