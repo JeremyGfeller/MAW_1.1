@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf.parser;
 
 namespace maw1._1
 {
@@ -22,6 +23,7 @@ namespace maw1._1
         private void btnOpen_Click(object sender, EventArgs e)
         {
             listFiles.Clear();
+            treeView1.Nodes.Clear();
 
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 
@@ -73,7 +75,7 @@ namespace maw1._1
                 bool SortedResultDate = DateCreation.Contains(SortedText2); //Return 1 if the string countains the sort typed by the user.
 
                 //File name
-                string FileName = Path.GetFileName(file); //Return the name + extension of the file
+                string FileName = System.IO.Path.GetFileName(file); //Return the name + extension of the file
                 string SortedText3 = txtSort3.Text; //Store the value of the textbox in SortedText3
                 bool SortedResultName = FileName.ToLower().Contains(SortedText3.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
 
@@ -82,7 +84,8 @@ namespace maw1._1
                 bool ReadMethodWord = FileName.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 bool ReadMethodExcel = FileName.ToLower().Contains(".xls"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                 bool ReadMethodPowerPoint = FileName.ToLower().Contains(".ppt"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-                
+                bool ReadMethodPdf = FileName.ToLower().Contains(".pdf"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+
                 //Content of file
                 string SortedText4 = txtSort4.Text; //Store the value of the textbox in SortedText4
                 
@@ -171,6 +174,17 @@ namespace maw1._1
                         xlWorkbook.Close(true, null, null);
                         Excel.Quit();
                         SortedContent = ExcelText.ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                    }
+                    else if (ReadMethodPdf)
+                    {
+                        iTextSharp.text.pdf.PdfReader reader = new iTextSharp.text.pdf.PdfReader(file);
+                        StringBuilder sb = new StringBuilder();
+                        for(int i=1;i<=reader.NumberOfPages; i++)
+                        {
+                            sb.Append(PdfTextExtractor.GetTextFromPage(reader, i));
+                        }
+                        reader.Close();
+                        SortedContent = sb.ToString().ToLower().Contains(SortedText4.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                     }
                     else
                     {
