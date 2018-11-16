@@ -227,7 +227,7 @@ namespace maw1._1
                 }
 
                 //Compares if the numbers of sorts and the nombers of items who corresponds with the sort are similar
-                if(NbSortsUsed == NbSortsRight)
+                if (NbSortsUsed == NbSortsRight)
                 {
                     TreeNode tds = td.Nodes.Add(fi.Name);
                     tds.Tag = fi.FullName;
@@ -264,6 +264,7 @@ namespace maw1._1
                 // Change the ToolTip only if the pointer moved to a new node.  
                 if (theNode.Tag.ToString() != this.toolTip1.GetToolTip(this.treeView1))
                     this.toolTip1.SetToolTip(this.treeView1, theNode.Tag.ToString());
+                
 
             }
             else     // Pointer is not over a node so clear the ToolTip.  
