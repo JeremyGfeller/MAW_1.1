@@ -41,12 +41,16 @@
             this.txt_date = new System.Windows.Forms.TextBox();
             this.txt_file = new System.Windows.Forms.TextBox();
             this.lst_files = new System.Windows.Forms.ListView();
+            this.NomFichier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Taille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Auteur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btn_path
             // 
             this.btn_path.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_path.Location = new System.Drawing.Point(189, 79);
+            this.btn_path.Location = new System.Drawing.Point(202, 79);
             this.btn_path.Name = "btn_path";
             this.btn_path.Size = new System.Drawing.Size(106, 27);
             this.btn_path.TabIndex = 11;
@@ -66,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(90, 25);
+            this.label1.Location = new System.Drawing.Point(96, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(320, 33);
             this.label1.TabIndex = 13;
@@ -152,11 +156,37 @@
             // 
             // lst_files
             // 
+            this.lst_files.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.NomFichier,
+            this.Taille,
+            this.Auteur,
+            this.Date});
             this.lst_files.Location = new System.Drawing.Point(87, 335);
             this.lst_files.Name = "lst_files";
             this.lst_files.Size = new System.Drawing.Size(994, 266);
             this.lst_files.TabIndex = 23;
             this.lst_files.UseCompatibleStateImageBehavior = false;
+            this.lst_files.View = System.Windows.Forms.View.Details;
+            // 
+            // NomFichier
+            // 
+            this.NomFichier.Text = "Nom";
+            this.NomFichier.Width = 300;
+            // 
+            // Taille
+            // 
+            this.Taille.Text = "Taille";
+            this.Taille.Width = 110;
+            // 
+            // Auteur
+            // 
+            this.Auteur.Text = "Auteur";
+            this.Auteur.Width = 150;
+            // 
+            // Date
+            // 
+            this.Date.Text = "Date";
+            this.Date.Width = 115;
             // 
             // Finder
             // 
@@ -186,7 +216,6 @@
 
         #endregion
         private System.Windows.Forms.Button btn_path;
-        private System.Windows.Forms.TextBox txt_path;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_keyWord;
@@ -198,6 +227,11 @@
         private System.Windows.Forms.TextBox txt_date;
         private System.Windows.Forms.TextBox txt_file;
         public System.Windows.Forms.ListView lst_files;
+        private System.Windows.Forms.ColumnHeader NomFichier;
+        private System.Windows.Forms.ColumnHeader Taille;
+        private System.Windows.Forms.ColumnHeader Auteur;
+        private System.Windows.Forms.ColumnHeader Date;
+        public System.Windows.Forms.TextBox txt_path;
     }
 }
 

@@ -29,6 +29,7 @@ namespace Finder
             {
                 selectPath = fbd.SelectedPath;
                 files.GetFiles(this, selectPath);
+                txt_path.Text = selectPath;
             }
         }
     }

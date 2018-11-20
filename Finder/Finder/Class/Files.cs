@@ -18,9 +18,9 @@ namespace Finder.Class
             FileInfo[] Files = d.GetFiles("*.*"); //Getting Text files
             string str = "";
             foreach (FileInfo file in Files)
-            {
-                var lastModified = Class.Files.GetLastWriteTime(path + "/" + file.Name);
-                string user = Class.Files.GetAccessControl(path + "/" + file.Name).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString();
+            { 
+                var lastModified = File.GetLastWriteTime(path + "/" + file.Name);
+                string user = File.GetAccessControl(path + "/" + file.Name).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString();
                 ListViewItem lvi = new ListViewItem();
                 lvi.Text = file.Name;
                 lvi.SubItems.Add(file.Length.ToString() + " octet ");
@@ -29,9 +29,7 @@ namespace Finder.Class
 
                 //lvi.SubItems.Add(file.Name);
                 FileFinder.lst_files.Items.Add(lvi);
-
             }
-
         }
     }
 }
