@@ -222,8 +222,6 @@
         private System.Windows.Forms.Label lbl_author;
         private System.Windows.Forms.Label lbl_date;
         private System.Windows.Forms.Label lbl_files;
-        private System.Windows.Forms.TextBox txt_keyWord;
-        private System.Windows.Forms.TextBox txt_author;
         private System.Windows.Forms.TextBox txt_date;
         private System.Windows.Forms.TextBox txt_file;
         public System.Windows.Forms.ListView lst_files;
@@ -232,6 +230,8 @@
         private System.Windows.Forms.ColumnHeader Auteur;
         private System.Windows.Forms.ColumnHeader Date;
         public System.Windows.Forms.TextBox txt_path;
+        public System.Windows.Forms.TextBox txt_keyWord;
+        public System.Windows.Forms.TextBox txt_author;
     }
 }
 
