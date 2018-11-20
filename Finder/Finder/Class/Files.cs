@@ -31,5 +31,10 @@ namespace Finder.Class
                 FileFinder.lst_files.Items.Add(lvi);
             }
         }
+
+        public void ReadFile(string selectPath, string selectFile)
+        {
+            Process.Start(Path.Combine(selectPath, selectFile));
+        }
     }
 }

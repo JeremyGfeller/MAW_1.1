@@ -45,6 +45,8 @@
             this.Taille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Auteur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_openDirectory = new System.Windows.Forms.Button();
+            this.btn_openFichier = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_path
@@ -161,7 +163,7 @@
             this.Taille,
             this.Auteur,
             this.Date});
-            this.lst_files.Location = new System.Drawing.Point(87, 335);
+            this.lst_files.Location = new System.Drawing.Point(87, 283);
             this.lst_files.Name = "lst_files";
             this.lst_files.Size = new System.Drawing.Size(994, 266);
             this.lst_files.TabIndex = 23;
@@ -188,12 +190,34 @@
             this.Date.Text = "Date";
             this.Date.Width = 115;
             // 
+            // btn_openDirectory
+            // 
+            this.btn_openDirectory.Location = new System.Drawing.Point(186, 583);
+            this.btn_openDirectory.Name = "btn_openDirectory";
+            this.btn_openDirectory.Size = new System.Drawing.Size(146, 23);
+            this.btn_openDirectory.TabIndex = 24;
+            this.btn_openDirectory.Text = "Ouvrir le répértoire ";
+            this.btn_openDirectory.UseVisualStyleBackColor = true;
+            this.btn_openDirectory.Click += new System.EventHandler(this.btn_openDirectory_Click);
+            // 
+            // btn_openFichier
+            // 
+            this.btn_openFichier.Location = new System.Drawing.Point(797, 583);
+            this.btn_openFichier.Name = "btn_openFichier";
+            this.btn_openFichier.Size = new System.Drawing.Size(146, 23);
+            this.btn_openFichier.TabIndex = 25;
+            this.btn_openFichier.Text = "Ouvrir le fichier";
+            this.btn_openFichier.UseVisualStyleBackColor = true;
+            this.btn_openFichier.Click += new System.EventHandler(this.btn_openFichier_Click);
+            // 
             // Finder
             // 
             this.AccessibleName = "Finder";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 636);
+            this.Controls.Add(this.btn_openFichier);
+            this.Controls.Add(this.btn_openDirectory);
             this.Controls.Add(this.lst_files);
             this.Controls.Add(this.txt_file);
             this.Controls.Add(this.txt_date);
@@ -232,6 +256,8 @@
         private System.Windows.Forms.ColumnHeader Auteur;
         private System.Windows.Forms.ColumnHeader Date;
         public System.Windows.Forms.TextBox txt_path;
+        private System.Windows.Forms.Button btn_openDirectory;
+        private System.Windows.Forms.Button btn_openFichier;
     }
 }
 
