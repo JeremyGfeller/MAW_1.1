@@ -45,6 +45,7 @@
             this.Taille = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Auteur = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Date = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_path
@@ -188,12 +189,24 @@
             this.Date.Text = "Date";
             this.Date.Width = 115;
             // 
+            // btn_search
+            // 
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_search.Location = new System.Drawing.Point(555, 258);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(94, 23);
+            this.btn_search.TabIndex = 24;
+            this.btn_search.Text = "Rechercher";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
             // Finder
             // 
             this.AccessibleName = "Finder";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 636);
+            this.Controls.Add(this.btn_search);
             this.Controls.Add(this.lst_files);
             this.Controls.Add(this.txt_file);
             this.Controls.Add(this.txt_date);
@@ -232,6 +245,7 @@
         public System.Windows.Forms.TextBox txt_author;
         public System.Windows.Forms.TextBox txt_date;
         public System.Windows.Forms.TextBox txt_file;
+        public System.Windows.Forms.Button btn_search;
     }
 }
 

@@ -22,15 +22,22 @@ namespace Finder
             InitializeComponent();
         }
 
-        public void btn_path_Click(object sender, EventArgs e)
+        public void btn_path_Click(object sender, EventArgs e) 
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            if(fbd.ShowDialog() == DialogResult.OK)
+            if (fbd.ShowDialog() == DialogResult.OK)
             {
                 selectPath = fbd.SelectedPath;
                 files.GetFiles(this, selectPath);
                 txt_path.Text = selectPath;
             }
+        }
+
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            selectPath = txt_path.Text;
+            files.GetFiles(this, selectPath);
         }
     }
 }
