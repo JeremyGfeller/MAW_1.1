@@ -70,23 +70,21 @@ namespace Finder.Class
                     }
                 }
 
+                //Search word 
+                if (FileFinder.txt_keyWord.Text != "")
+                {
+                    bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath, path); //Select the method to check the file name
+                    NbSortsUsed++;
+                    if (wordCorresponds)
+                    {
+                        NbSortsRight++;
+                    }
+                }
+
                 //Compares if the numbers of sorts and the nombers of items who corresponds with the sort are similar
                 if (NbSortsUsed == NbSortsRight)
                 {
-                    //Sort by content if corresponds on other criterias. The code is here to prevent of spending time on opening and closing useless files
-                    /*if (FileFinder.txt_keyWord.Text != "")
-                    {*/
-                        //Select the method to read the file
-                        /*bool ReadMethodWord = file.Name.ToLower().Contains(".doc"); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-
-                        if (ReadMethodWord)
-                        {
-
-                        }
-                    }*/
-
                     FileFinder.lst_files.Items.Add(lvi);
-
                     lvi.Text = file.Name;
                     lvi.SubItems.Add(file.Length.ToString() + " octets");
                     lvi.SubItems.Add(user.ToString());
