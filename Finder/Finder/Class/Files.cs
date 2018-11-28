@@ -69,28 +69,33 @@ namespace Finder.Class
                         NbSortsRight++;
                     }
                 }
-
-                //Search word 
-                if (FileFinder.txt_keyWord.Text != "")
-                {
-                    bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath, path); //Select the method to check the file name
-                    NbSortsUsed++;
-                    if (wordCorresponds)
-                    {
-                        NbSortsRight++;
-                    }
-                }
+                
 
                 //Compares if the numbers of sorts and the nombers of items who corresponds with the sort are similar
                 if (NbSortsUsed == NbSortsRight)
                 {
-                    FileFinder.lst_files.Items.Add(lvi);
-                    lvi.Text = file.Name;
-                    lvi.SubItems.Add(file.Length.ToString() + " octets");
-                    lvi.SubItems.Add(user.ToString());
-                    lvi.SubItems.Add(lastModified.ToString());
+                    //Search word 
+                    if (FileFinder.txt_keyWord.Text != "")
+                    {
+                        bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath, path); //Select the method to check the file name
+                        if (wordCorresponds)
+                        {
+                            FileFinder.lst_files.Items.Add(lvi);
+                            lvi.Text = file.Name;
+                            lvi.SubItems.Add(file.Length.ToString() + " octets");
+                            lvi.SubItems.Add(user.ToString());
+                            lvi.SubItems.Add(lastModified.ToString());
+                        }
+                    }
+                    else
+                    {
+                        FileFinder.lst_files.Items.Add(lvi);
+                        lvi.Text = file.Name;
+                        lvi.SubItems.Add(file.Length.ToString() + " octets");
+                        lvi.SubItems.Add(user.ToString());
+                        lvi.SubItems.Add(lastModified.ToString());
+                    }
                 }
-
             }
         }
     }

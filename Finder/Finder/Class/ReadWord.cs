@@ -50,33 +50,22 @@ namespace Finder.Class
 
             //N:\COMMUN\ELEVE\INFO\SI-T1a\MawDataTest
             
+            
+                bool SortResult = CompletePath.ToLower().Contains(".txt");
+                bool SortResult2 = CompletePath.ToLower().Contains(".doc");
 
-            foreach (FileInfo file in extensionFile)
-            {
-                bool checkpptx = path.Contains("pptx");
-
-                if (checkpptx == false)
+                if (SortResult2 || SortResult)
                 {
-                    try
+                    Document document = new Document();
+                    document.LoadFromFile(CompletePath);
+                    foreach (Section section in document.Sections)
                     {
-
-                        Document document = new Document();
-                        document.LoadFromFile(CompletePath);
-                        foreach (Section section in document.Sections)
+                        foreach (Paragraph paragraph in section.Paragraphs)
                         {
-                            foreach (Paragraph paragraph in section.Paragraphs)
-                            {
-                                text.AppendLine(paragraph.Text);
-                            }
+                            text.AppendLine(paragraph.Text);
                         }
                     }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                    //MessageBox.Show(Checkpptx);
                 }
-            }
 
             bool ContentCorrespond;
             String txt_keyWord = FileFinder.txt_keyWord.Text;
