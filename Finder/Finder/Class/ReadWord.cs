@@ -45,26 +45,38 @@ namespace Finder.Class
         public bool ReadWordFile(Files files, Finder FileFinder, string CompletePath, string path)
         {
             StringBuilder text = new StringBuilder();
-            //DirectoryInfo d = new DirectoryInfo(path);//Assuming Test is your Folder
-            //FileInfo[] extensionFile = d.GetFiles("*.*"); //Getting Text files
+            DirectoryInfo d = new DirectoryInfo(path);//Assuming Test is your Folder
+            FileInfo[] extensionFile = d.GetFiles("*.*"); //Getting Text files
 
             //N:\COMMUN\ELEVE\INFO\SI-T1a\MawDataTest
+            
 
-            /*foreach (FileInfo file in extensionFile)
+            foreach (FileInfo file in extensionFile)
             {
-                if(!file.Name.Contains("pptx"))
-                {*/
-                    Document document = new Document();
-                    document.LoadFromFile(CompletePath);
-                    foreach (Section section in document.Sections)
+                bool checkpptx = path.Contains("pptx");
+
+                if (checkpptx == false)
+                {
+                    try
                     {
-                        foreach (Paragraph paragraph in section.Paragraphs)
+
+                        Document document = new Document();
+                        document.LoadFromFile(CompletePath);
+                        foreach (Section section in document.Sections)
                         {
-                            text.AppendLine(paragraph.Text);
+                            foreach (Paragraph paragraph in section.Paragraphs)
+                            {
+                                text.AppendLine(paragraph.Text);
+                            }
                         }
                     }
-                /*}
-            }*/
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    //MessageBox.Show(Checkpptx);
+                }
+            }
 
             bool ContentCorrespond;
             String txt_keyWord = FileFinder.txt_keyWord.Text;
