@@ -67,6 +67,7 @@ namespace Finder
             {
                 files.ReadFile(selectPath, selectFile);
             }
+        }
 
         private void btn_search_Click(object sender, EventArgs e)
         {

@@ -47,8 +47,8 @@ namespace Finder.Class
             return ContentCorrespond;
 
 
-            /* Fonctionnel lecture PDF
-            try
+            //Fonctionnel lecture PDF
+            /*try
             {
                 using (PdfReader reader = new PdfReader(CompletePath))
                 {

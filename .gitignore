@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+Finder/.vs/Finder/v15/.suo
+Finder/.vs/Finder/v15/Server/sqlite3/storage.ide-shm
+Finder/.vs/Finder/v15/Server/sqlite3/storage.ide-wal
