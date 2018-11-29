@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.IO;
 using Spire.Doc;
 using Spire.Doc.Documents;
+using Spire.Pdf;
+using Spire.Xls;
+using Spire.Presentation;
 
 using System.Windows;
 using System.Windows.Forms;
@@ -44,28 +47,34 @@ namespace Finder.Class
     {
         public bool ReadWordFile(Files files, Finder FileFinder, string CompletePath, string path)
         {
-            StringBuilder text = new StringBuilder();
-            DirectoryInfo d = new DirectoryInfo(path);//Assuming Test is your Folder
-            FileInfo[] extensionFile = d.GetFiles("*.*"); //Getting Text files
 
             //N:\COMMUN\ELEVE\INFO\SI-T1a\MawDataTest
-            
-            
-                bool SortResult = CompletePath.ToLower().Contains(".txt");
-                bool SortResult2 = CompletePath.ToLower().Contains(".doc");
 
-                if (SortResult2 || SortResult)
+            /*Presentation ppt = new Presentation();
+                ppt.LoadFromFile(CompletePath);*/
+
+            // https://www.e-iceblue.com/Tutorials/Spire.PDF/Spire.PDF-Program-Guide/How-to-Extract-Text-from-PDF-Document-with-C-/VB.NET.html
+            /*PdfDocument document2 = new PdfDocument();
+            document2.LoadFromFile(CompletePath);
+            StringBuilder content = new StringBuilder();
+            content.Append(document.Pages);*/
+
+            bool SortResult = CompletePath.ToLower().Contains(".txt");
+            bool SortResult2 = CompletePath.ToLower().Contains(".doc");
+
+            /*if (SortResult2 || SortResult)
+            {*/
+                StringBuilder text = new StringBuilder();
+                Document document = new Document();
+                document.LoadFromFile(CompletePath);
+                foreach (Section section in document.Sections)
                 {
-                    Document document = new Document();
-                    document.LoadFromFile(CompletePath);
-                    foreach (Section section in document.Sections)
+                    foreach (Paragraph paragraph in section.Paragraphs)
                     {
-                        foreach (Paragraph paragraph in section.Paragraphs)
-                        {
-                            text.AppendLine(paragraph.Text);
-                        }
+                        text.AppendLine(paragraph.Text);
                     }
                 }
+            //}
 
             bool ContentCorrespond;
             String txt_keyWord = FileFinder.txt_keyWord.Text;
