@@ -27,11 +27,10 @@ namespace Finder
             InitializeComponent();
         }
 
-        // Affiche les fichiers du dossier seléctionné
         public void btn_path_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
-            if(fbd.ShowDialog() == DialogResult.OK)
+            if (fbd.ShowDialog() == DialogResult.OK)
             {
                 selectPath = fbd.SelectedPath;
                 files.GetFiles(this, selectPath);
@@ -39,7 +38,7 @@ namespace Finder
             }
         }
 
-        // Fonction qui ouvre le répertoire dans lequel la recherche a été faite 
+        // Fonction qui ouvre le répertoire dans lequel la recherche a été faite
         private void btn_openDirectory_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(selectPath))
@@ -52,7 +51,7 @@ namespace Finder
             }
         }
 
-        // Fonction qui ouvre un fichier seléctionné 
+        // Fonction qui ouvre un fichier seléctionné
         private void btn_openFichier_Click(object sender, EventArgs e)
         {
             selectFile = lst_files.SelectedItems[0].Text;
@@ -68,6 +67,11 @@ namespace Finder
             {
                 files.ReadFile(selectPath, selectFile);
             }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            selectPath = txt_path.Text;
+            files.GetFiles(this, selectPath);
         }
     }
 }
