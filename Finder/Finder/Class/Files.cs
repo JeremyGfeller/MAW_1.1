@@ -74,10 +74,11 @@ namespace Finder.Class
                 //Compares if the numbers of sorts and the nombers of items who corresponds with the sort are similar
                 if (NbSortsUsed == NbSortsRight)
                 {
-                    //Search word 
+                    //Search word. The if is there to prevent of waste useless time in reading files who aren't in the others sorts
                     if (FileFinder.txt_keyWord.Text != "")
                     {
-                        bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath, path); //Select the method to check the file name
+                        //Select the method to read the content of the file
+                        bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath); 
                         if (wordCorresponds)
                         {
                             FileFinder.lst_files.Items.Add(lvi);
