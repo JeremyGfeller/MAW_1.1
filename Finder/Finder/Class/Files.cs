@@ -29,6 +29,8 @@ namespace Finder.Class
 
                 //Add the classes to read
                 Class.ReadWord readWord = new Class.ReadWord();
+                Class.ReadPdf readPdf = new Class.ReadPdf();
+                Class.ReadExcel readExcel = new Class.ReadExcel();
                 Class.SortAuthor sortAuthor = new Class.SortAuthor();
                 Class.SortDate sortDate = new Class.SortDate();
                 Class.SortFilename sortFilename = new Class.SortFilename();                
@@ -78,14 +80,51 @@ namespace Finder.Class
                     if (FileFinder.txt_keyWord.Text != "")
                     {
                         //Select the method to read the content of the file
-                        bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath); 
-                        if (wordCorresponds)
+                        /*bool WordMethod = file.Name.ToLower().Contains(".doc");
+                        bool PdfMethod = file.Name.ToLower().Contains(".pdf");
+                        bool ExcelMethod = file.Name.ToLower().Contains(".xls");
+                        bool defaultMethod = file.Name.ToLower().Contains(".txt");*/
+
+                        string Extension = file.Name.ToLower().Split('.').Last();
+                        //MessageBox.Show(Extension);
+                        switch (Extension)
                         {
-                            FileFinder.lst_files.Items.Add(lvi);
-                            lvi.Text = file.Name;
-                            lvi.SubItems.Add(file.Length.ToString() + " octets");
-                            lvi.SubItems.Add(user.ToString());
-                            lvi.SubItems.Add(lastModified.ToString());
+                            case "doc":
+                            case "docx":
+                                bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath);
+                                if (wordCorresponds)
+                                {
+                                    FileFinder.lst_files.Items.Add(lvi);
+                                    lvi.Text = file.Name;
+                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                    lvi.SubItems.Add(user.ToString());
+                                    lvi.SubItems.Add(lastModified.ToString());
+                                }
+                                break;
+                            case "xls":
+                            case "xlsx":
+                                MessageBox.Show("Excel");
+                                break;
+                            case "ppt":
+                            case "pptx":
+                                MessageBox.Show("Power point");
+                                break;
+                            case "pdf":
+                                bool pdfCorresponds = readPdf.ReadPdfFile(this, FileFinder, CompletePath);
+                                if (pdfCorresponds)
+                                {
+                                    FileFinder.lst_files.Items.Add(lvi);
+                                    lvi.Text = file.Name;
+                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                    lvi.SubItems.Add(user.ToString());
+                                    lvi.SubItems.Add(lastModified.ToString());
+                                }
+                                break;
+                            case "txt":
+                                MessageBox.Show("Txt");
+                                break;
+                            default:
+                                break;
                         }
                     }
                     else
