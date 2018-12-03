@@ -23,54 +23,18 @@ namespace Finder.Class
     {
         public bool ReadExcelFile(Files files, Finder FileFinder, string CompletePath)
         {
-            bool SortResult = CompletePath.ToLower().Contains(".xls");
             StringBuilder text = new StringBuilder();
-            if (SortResult)
-            {
-                Workbook workbook = new Workbook();
-                workbook.LoadFromFile(CompletePath);
-                Worksheet sheet = workbook.Worksheets[0];
-                int columnCount = sheet.Columns.Count();
-                int rowsCount = sheet.Rows.Count();
-                int i = 0;
-                int j = 0;
-                foreach (CellRange rows in sheet.Rows[0])
-                {
-                    try
-                    {
-                        foreach (CellRange range in sheet.Columns[0])
-                        {
-                            text.AppendLine(range.Text + rows.Text);
 
-                            if (j > rowsCount)
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                j++;
-                            }
-                        }
-                        if (i > rowsCount)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            i++;
-                        }
-                    }
-                    catch
-                    {
+            Workbook workbook = new Workbook();
+            workbook.LoadFromFile(CompletePath);
+            Worksheet sheet = workbook.Worksheets[0];
 
-                    }
-                    
-                }
-            }
-            bool ContentCorrespond; //Used to know if the content correspond with the values given by the user
             String txt_keyWord = FileFinder.txt_keyWord.Text; //Store the value given by the user
-            ContentCorrespond = text.ToString().ToLower().Contains(txt_keyWord.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-            return ContentCorrespond; 
+            foreach (CellRange range in sheet.FindAllString(txt_keyWord.ToLower(), true, true))
+            {
+                return true; //If the text correspond, a booleon of type true is returned
+            }
+            return false; //Else, a false is returned
         }
     }
 }

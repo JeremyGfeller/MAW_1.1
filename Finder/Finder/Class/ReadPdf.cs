@@ -39,9 +39,9 @@ namespace Finder.Class
                             text.Append(PdfTextExtractor.GetTextFromPage(reader, i));
                         }
                     }
-                    bool ContentCorrespond; //Used to know if the content correspond with the values given by the user
+
                     String txt_keyWord = FileFinder.txt_keyWord.Text; //Store the value given by the user
-                    ContentCorrespond = text.ToString().ToLower().Contains(txt_keyWord.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                    bool ContentCorrespond = text.ToString().ToLower().Contains(txt_keyWord.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
                     return ContentCorrespond;
                 }
             }

@@ -104,7 +104,15 @@ namespace Finder.Class
                                 break;
                             case "xls":
                             case "xlsx":
-                                //MessageBox.Show("Excel");
+                                bool excelCorresponds = readExcel.ReadExcelFile(this, FileFinder, CompletePath);
+                                if (excelCorresponds)
+                                {
+                                    FileFinder.lst_files.Items.Add(lvi);
+                                    lvi.Text = file.Name;
+                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                    lvi.SubItems.Add(user.ToString());
+                                    lvi.SubItems.Add(lastModified.ToString());
+                                }
                                 break;
                             case "ppt":
                             case "pptx":
