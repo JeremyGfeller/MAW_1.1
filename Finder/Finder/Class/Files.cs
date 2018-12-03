@@ -31,6 +31,7 @@ namespace Finder.Class
                 Class.ReadWord readWord = new Class.ReadWord();
                 Class.ReadPdf readPdf = new Class.ReadPdf();
                 Class.ReadExcel readExcel = new Class.ReadExcel();
+                Class.ReadWindowsCompatible readWindowsCompatible = new Class.ReadWindowsCompatible();
                 Class.SortAuthor sortAuthor = new Class.SortAuthor();
                 Class.SortDate sortDate = new Class.SortDate();
                 Class.SortFilename sortFilename = new Class.SortFilename();                
@@ -103,11 +104,11 @@ namespace Finder.Class
                                 break;
                             case "xls":
                             case "xlsx":
-                                MessageBox.Show("Excel");
+                                //MessageBox.Show("Excel");
                                 break;
                             case "ppt":
                             case "pptx":
-                                MessageBox.Show("Power point");
+                                //MessageBox.Show("Power point");
                                 break;
                             case "pdf":
                                 bool pdfCorresponds = readPdf.ReadPdfFile(this, FileFinder, CompletePath);
@@ -120,10 +121,16 @@ namespace Finder.Class
                                     lvi.SubItems.Add(lastModified.ToString());
                                 }
                                 break;
-                            case "txt":
-                                MessageBox.Show("Txt");
-                                break;
                             default:
+                                bool windowsCompatibleCorresponds = readWindowsCompatible.ReadWindowsCompatibleFile(this, FileFinder, CompletePath);
+                                if (windowsCompatibleCorresponds)
+                                {
+                                    FileFinder.lst_files.Items.Add(lvi);
+                                    lvi.Text = file.Name;
+                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                    lvi.SubItems.Add(user.ToString());
+                                    lvi.SubItems.Add(lastModified.ToString());
+                                }
                                 break;
                         }
                     }

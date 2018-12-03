@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Class\OpenRep.cs" />
     <Compile Include="Class\Files.cs" />
+    <Compile Include="Class\ReadWindowsCompatible.cs" />
     <Compile Include="Class\ReadPdf.cs" />
     <Compile Include="Class\ReadExcel.cs" />
     <Compile Include="Class\ReadWord.cs" />

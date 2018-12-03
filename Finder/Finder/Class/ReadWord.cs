@@ -25,15 +25,15 @@ namespace Finder.Class
         {
             StringBuilder text = new StringBuilder();
             
-                Document document = new Document();
-                document.LoadFromFile(CompletePath);
-                foreach (Section section in document.Sections)
+            Document document = new Document();
+            document.LoadFromFile(CompletePath);
+            foreach (Section section in document.Sections)
+            {
+                foreach (Paragraph paragraph in section.Paragraphs)
                 {
-                    foreach (Paragraph paragraph in section.Paragraphs)
-                    {
-                        text.AppendLine(paragraph.Text);
-                    }
+                    text.AppendLine(paragraph.Text);
                 }
+            }
 
             bool ContentCorrespond; //Used to know if the content correspond with the values given by the user
             String txt_keyWord = FileFinder.txt_keyWord.Text; //Store the value given by the user
