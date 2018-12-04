@@ -80,14 +80,7 @@ namespace Finder.Class
                     //Search word. The if is there to prevent of waste useless time in reading files who aren't in the others sorts
                     if (FileFinder.txt_keyWord.Text != "")
                     {
-                        //Select the method to read the content of the file
-                        /*bool WordMethod = file.Name.ToLower().Contains(".doc");
-                        bool PdfMethod = file.Name.ToLower().Contains(".pdf");
-                        bool ExcelMethod = file.Name.ToLower().Contains(".xls");
-                        bool defaultMethod = file.Name.ToLower().Contains(".txt");*/
-
                         string Extension = file.Name.ToLower().Split('.').Last();
-                        //MessageBox.Show(Extension);
                         switch (Extension)
                         {
                             case "doc":
@@ -128,6 +121,29 @@ namespace Finder.Class
                                     lvi.SubItems.Add(user.ToString());
                                     lvi.SubItems.Add(lastModified.ToString());
                                 }
+                                break;
+                            //Image format
+                            case "png":
+                            case "jpg":
+                            case "jpeg":
+                            case "gif":
+                            case "bmp":
+                            // Video format
+                            case "avi":
+                            case "wmv":
+                            case "mov":
+                            case "mkv":
+                            case "flv":
+                            // Audio format
+                            case "wav":
+                            case "bwf":
+                            case "raw":
+                            case "flac":
+                            case "mp3":
+                            case "wma":
+                            case "aac":
+                            case "mp4":
+                            case "mxp4":
                                 break;
                             default:
                                 bool windowsCompatibleCorresponds = readWindowsCompatible.ReadWindowsCompatibleFile(this, FileFinder, CompletePath);

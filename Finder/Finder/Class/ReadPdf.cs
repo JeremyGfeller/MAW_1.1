@@ -23,31 +23,24 @@ namespace Finder.Class
     {
         public bool ReadPdfFile(Files files, Finder FileFinder, string CompletePath)
         {
-            try
+            using (PdfReader reader = new PdfReader(CompletePath))
             {
-                using (PdfReader reader = new PdfReader(CompletePath))
+                StringBuilder text = new StringBuilder();
+
+                bool SortResult = CompletePath.ToLower().Contains(".pdf");
+
+                if (SortResult)
                 {
-                    StringBuilder text = new StringBuilder();
 
-                    bool SortResult = CompletePath.ToLower().Contains(".pdf");
-
-                    if (SortResult)
+                    for (int i = 1; i <= reader.NumberOfPages; i++)
                     {
-
-                        for (int i = 1; i <= reader.NumberOfPages; i++)
-                        {
-                            text.Append(PdfTextExtractor.GetTextFromPage(reader, i));
-                        }
+                        text.Append(PdfTextExtractor.GetTextFromPage(reader, i));
                     }
-
-                    String txt_keyWord = FileFinder.txt_keyWord.Text; //Store the value given by the user
-                    bool ContentCorrespond = text.ToString().ToLower().Contains(txt_keyWord.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
-                    return ContentCorrespond;
                 }
-            }
-            catch
-            {
-                return false;
+
+                String txt_keyWord = FileFinder.txt_keyWord.Text; //Store the value given by the user
+                bool ContentCorrespond = text.ToString().ToLower().Contains(txt_keyWord.ToLower()); //Return 1 if the string countains the sort typed by the user. ToLower() to make the sort case insensitive
+                return ContentCorrespond;
             }
         }
     }
