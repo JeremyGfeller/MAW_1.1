@@ -12,12 +12,16 @@ namespace Finder.Class
 
             Workbook workbook = new Workbook();
             workbook.LoadFromFile(CompletePath);
-            Worksheet sheet = workbook.Worksheets[0];
+            //Worksheet sheet = workbook.Worksheets[0];
 
             String txt_keyWord = FileFinder.txt_keyWord.Text; //Store the value given by the user
-            foreach (CellRange range in sheet.FindAllString(txt_keyWord.ToLower(), true, true))
+
+            foreach (Worksheet sheet in workbook.Worksheets) //Read all the page
             {
-                return true; //If the text correspond, a booleon of type true is returned
+                foreach (CellRange range in sheet.FindAllString(txt_keyWord.ToLower(), true, true))
+                {
+                    return true; //If the text correspond, a booleon of type true is returned
+                }
             }
             return false; //Else, a false is returned
         }
