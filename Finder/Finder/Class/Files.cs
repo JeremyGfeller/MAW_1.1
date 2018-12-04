@@ -81,26 +81,40 @@ namespace Finder.Class
                         {
                             case "doc":
                             case "docx":
-                                bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath);
-                                if (wordCorresponds)
+                                try
                                 {
-                                    FileFinder.lst_files.Items.Add(lvi);
-                                    lvi.Text = file.Name;
-                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                    lvi.SubItems.Add(user.ToString());
-                                    lvi.SubItems.Add(lastModified.ToString());
+                                    bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath);
+                                    if (wordCorresponds)
+                                    {
+                                        FileFinder.lst_files.Items.Add(lvi);
+                                        lvi.Text = file.Name;
+                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                        lvi.SubItems.Add(user.ToString());
+                                        lvi.SubItems.Add(lastModified.ToString());
+                                    }
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Une erreur est survenue, un document word est peut-être ouvert");
                                 }
                                 break;
                             case "xls":
                             case "xlsx":
-                                bool excelCorresponds = readExcel.ReadExcelFile(this, FileFinder, CompletePath);
-                                if (excelCorresponds)
+                                try
                                 {
-                                    FileFinder.lst_files.Items.Add(lvi);
-                                    lvi.Text = file.Name;
-                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                    lvi.SubItems.Add(user.ToString());
-                                    lvi.SubItems.Add(lastModified.ToString());
+                                    bool excelCorresponds = readExcel.ReadExcelFile(this, FileFinder, CompletePath);
+                                    if (excelCorresponds)
+                                    {
+                                        FileFinder.lst_files.Items.Add(lvi);
+                                        lvi.Text = file.Name;
+                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                        lvi.SubItems.Add(user.ToString());
+                                        lvi.SubItems.Add(lastModified.ToString());
+                                    }
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Une erreur est survenue, un tableau excel est peut-être ouvert");
                                 }
                                 break;
                             case "ppt":
@@ -108,14 +122,21 @@ namespace Finder.Class
                                 //MessageBox.Show("Power point");
                                 break;
                             case "pdf":
-                                bool pdfCorresponds = readPdf.ReadPdfFile(this, FileFinder, CompletePath);
-                                if (pdfCorresponds)
+                                try
                                 {
-                                    FileFinder.lst_files.Items.Add(lvi);
-                                    lvi.Text = file.Name;
-                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                    lvi.SubItems.Add(user.ToString());
-                                    lvi.SubItems.Add(lastModified.ToString());
+                                    bool pdfCorresponds = readPdf.ReadPdfFile(this, FileFinder, CompletePath);
+                                    if (pdfCorresponds)
+                                    {
+                                        FileFinder.lst_files.Items.Add(lvi);
+                                        lvi.Text = file.Name;
+                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                        lvi.SubItems.Add(user.ToString());
+                                        lvi.SubItems.Add(lastModified.ToString());
+                                    }
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Une erreur est survenue, un document pdf est peut-être ouvert");
                                 }
                                 break;
                             //Image format
@@ -142,14 +163,21 @@ namespace Finder.Class
                             case "mxp4":
                                 break;
                             default:
-                                bool windowsCompatibleCorresponds = readWindowsCompatible.ReadWindowsCompatibleFile(this, FileFinder, CompletePath);
-                                if (windowsCompatibleCorresponds)
+                                try
                                 {
-                                    FileFinder.lst_files.Items.Add(lvi);
-                                    lvi.Text = file.Name;
-                                    lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                    lvi.SubItems.Add(user.ToString());
-                                    lvi.SubItems.Add(lastModified.ToString());
+                                    bool windowsCompatibleCorresponds = readWindowsCompatible.ReadWindowsCompatibleFile(this, FileFinder, CompletePath);
+                                    if (windowsCompatibleCorresponds)
+                                    {
+                                        FileFinder.lst_files.Items.Add(lvi);
+                                        lvi.Text = file.Name;
+                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
+                                        lvi.SubItems.Add(user.ToString());
+                                        lvi.SubItems.Add(lastModified.ToString());
+                                    }
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Une erreur est survenue, un document compatible a windows est peut-être ouvert");
                                 }
                                 break;
                         }
