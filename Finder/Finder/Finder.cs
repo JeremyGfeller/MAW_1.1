@@ -67,5 +67,13 @@ namespace Finder
             selectPath = txt_path.Text;
             files.GetFiles(this, selectPath);
         }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            txt_keyWord.Clear();
+            txt_author.Clear();
+            txt_date.Clear();
+            txt_file.Clear();
+        }
     }
 }

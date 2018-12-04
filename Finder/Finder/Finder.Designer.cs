@@ -48,6 +48,7 @@
             this.btn_openDirectory = new System.Windows.Forms.Button();
             this.btn_openFichier = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_path
@@ -112,9 +113,9 @@
             this.lbl_date.AutoSize = true;
             this.lbl_date.Location = new System.Drawing.Point(720, 158);
             this.lbl_date.Name = "lbl_date";
-            this.lbl_date.Size = new System.Drawing.Size(109, 13);
+            this.lbl_date.Size = new System.Drawing.Size(104, 13);
             this.lbl_date.TabIndex = 17;
-            this.lbl_date.Text = "Date de modifications";
+            this.lbl_date.Text = "Date de modification";
             // 
             // lbl_files
             // 
@@ -222,12 +223,24 @@
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btn_cancel.Location = new System.Drawing.Point(796, 244);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(94, 23);
+            this.btn_cancel.TabIndex = 26;
+            this.btn_cancel.Text = "Réinitialiser";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
             // Finder
             // 
             this.AccessibleName = "Finder";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 636);
+            this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_openFichier);
             this.Controls.Add(this.btn_openDirectory);
             this.Controls.Add(this.btn_search);
@@ -272,5 +285,6 @@
         public System.Windows.Forms.TextBox txt_date;
         public System.Windows.Forms.TextBox txt_file;
         public System.Windows.Forms.Button btn_search;
+        public System.Windows.Forms.Button btn_cancel;
     }
 }
