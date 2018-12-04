@@ -1,7 +1,0 @@
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDriversTest.dll
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDriversTest.pdb
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDrivers.exe
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\bin\Debug\PaleoDrivers.pdb
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\obj\Debug\PaleoDriversTest.csprojResolveAssemblyReference.cache
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\obj\Debug\PaleoDriversTest.dll
-P:\CPNV\2° Année\Modules ICT\ICT-226\PaleoDriver\PaleoDrivers\PaleoDriversTest\obj\Debug\PaleoDriversTest.pdb
