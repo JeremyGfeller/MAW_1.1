@@ -1,21 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Spire.Xls;
+using System;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using Spire.Doc;
-using Spire.Doc.Documents;
-using Spire.Xls;
-using Spire.Presentation;
-using System.Windows;
-using System.Windows.Forms;
-using System.Collections.ObjectModel;
-using System.Security.Principal;
-using System.Windows.Input;
-using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
-using Spire.Xls.Core.Spreadsheet.Shapes;
 
 namespace Finder.Class
 {
