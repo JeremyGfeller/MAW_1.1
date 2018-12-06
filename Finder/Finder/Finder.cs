@@ -64,8 +64,22 @@ namespace Finder
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            selectPath = txt_path.Text;
-            files.GetFiles(this, selectPath);
+            if(txt_path.TextLength > 1)
+            {
+                try
+                {
+                    selectPath = txt_path.Text;
+                    files.GetFiles(this, selectPath);
+                }
+                catch
+                {
+                    MessageBox.Show("Le dossier selectionné n'existe pas");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aucun dossier selectionné");
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
