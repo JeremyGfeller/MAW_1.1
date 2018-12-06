@@ -101,6 +101,8 @@ namespace Finder
             txt_author.Clear();
             txt_date.Clear();
             txt_file.Clear();
+            files.GetFiles(this, selectPath);
+            txt_path.Text = selectPath;
         }
     }
 }

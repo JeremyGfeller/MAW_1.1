@@ -14,7 +14,8 @@ namespace Finder.Class
             FileInfo[] Files = d.GetFiles("*.*"); //Getting Text files
 
             int FoundFiles = 0; //Variable to calcule the number of files found
-            
+            int FoundWords = 0; //Variable to calcule the number of files found
+
             //Variables used for compare how many sorts are used with how many sorts corresponds with the items found
             int NbSortsUsed = 0; //Variable to count the number of sorts
             int NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
@@ -23,25 +24,25 @@ namespace Finder.Class
             {
                 MessageBox.Show("Il n'existe aucun fichier dans le dossier sélectionné.");
             }
+            
+            //Add the classes to read
+            Class.ReadWord readWord = new Class.ReadWord();
+            Class.ReadPdf readPdf = new Class.ReadPdf();
+            Class.ReadExcel readExcel = new Class.ReadExcel();
+            Class.ReadWindowsCompatible readWindowsCompatible = new Class.ReadWindowsCompatible();
+            Class.SortAuthor sortAuthor = new Class.SortAuthor();
+            Class.SortDate sortDate = new Class.SortDate();
+            Class.SortFilename sortFilename = new Class.SortFilename();
 
             foreach (FileInfo file in Files)
             {
+                //ListViewItem lvi = new ListViewItem();
 
                 //Create the complete path
                 string CompletePath = path + "/" + file.Name;
 
                 var lastModified = File.GetLastWriteTime(CompletePath);
                 string user = File.GetAccessControl(CompletePath).GetOwner(typeof(System.Security.Principal.NTAccount)).ToString();
-                ListViewItem lvi = new ListViewItem();
-
-                //Add the classes to read
-                Class.ReadWord readWord = new Class.ReadWord();
-                Class.ReadPdf readPdf = new Class.ReadPdf();
-                Class.ReadExcel readExcel = new Class.ReadExcel();
-                Class.ReadWindowsCompatible readWindowsCompatible = new Class.ReadWindowsCompatible();
-                Class.SortAuthor sortAuthor = new Class.SortAuthor();
-                Class.SortDate sortDate = new Class.SortDate();
-                Class.SortFilename sortFilename = new Class.SortFilename();                
 
                 //Variables used for compare how many sorts are used with how many sorts corresponds with the items found
                 NbSortsUsed = 0; //Variable to count the number of sorts
@@ -99,11 +100,8 @@ namespace Finder.Class
                                     bool wordCorresponds = readWord.ReadWordFile(this, FileFinder, CompletePath);
                                     if (wordCorresponds)
                                     {
-                                        FileFinder.lst_files.Items.Add(lvi);
-                                        lvi.Text = file.Name;
-                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                        lvi.SubItems.Add(user.ToString());
-                                        lvi.SubItems.Add(lastModified.ToString());
+                                        ShowFiles(FileFinder, file, user, lastModified);
+                                        FoundWords++;
                                     }
                                 }
                                 catch
@@ -118,11 +116,8 @@ namespace Finder.Class
                                     bool excelCorresponds = readExcel.ReadExcelFile(this, FileFinder, CompletePath);
                                     if (excelCorresponds)
                                     {
-                                        FileFinder.lst_files.Items.Add(lvi);
-                                        lvi.Text = file.Name;
-                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                        lvi.SubItems.Add(user.ToString());
-                                        lvi.SubItems.Add(lastModified.ToString());
+                                        ShowFiles(FileFinder, file, user, lastModified);
+                                        FoundWords++;
                                     }
                                 }
                                 catch
@@ -140,11 +135,8 @@ namespace Finder.Class
                                     bool pdfCorresponds = readPdf.ReadPdfFile(this, FileFinder, CompletePath);
                                     if (pdfCorresponds)
                                     {
-                                        FileFinder.lst_files.Items.Add(lvi);
-                                        lvi.Text = file.Name;
-                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                        lvi.SubItems.Add(user.ToString());
-                                        lvi.SubItems.Add(lastModified.ToString());
+                                        ShowFiles(FileFinder, file, user, lastModified);
+                                        FoundWords++;
                                     }
                                 }
                                 catch
@@ -181,11 +173,8 @@ namespace Finder.Class
                                     bool windowsCompatibleCorresponds = readWindowsCompatible.ReadWindowsCompatibleFile(this, FileFinder, CompletePath);
                                     if (windowsCompatibleCorresponds)
                                     {
-                                        FileFinder.lst_files.Items.Add(lvi);
-                                        lvi.Text = file.Name;
-                                        lvi.SubItems.Add(file.Length.ToString() + " octets");
-                                        lvi.SubItems.Add(user.ToString());
-                                        lvi.SubItems.Add(lastModified.ToString());
+                                        ShowFiles(FileFinder, file, user, lastModified);
+                                        FoundWords++;
                                     }
                                 }
                                 catch
@@ -197,16 +186,13 @@ namespace Finder.Class
                     }
                     else
                     {
-                        FileFinder.lst_files.Items.Add(lvi);
-                        lvi.Text = file.Name;
-                        lvi.SubItems.Add(file.Length.ToString() + " octets");
-                        lvi.SubItems.Add(user.ToString());
-                        lvi.SubItems.Add(lastModified.ToString());
+                        ShowFiles(FileFinder, file, user, lastModified);
+                        FoundWords++;
                     }
                 }
             }
 
-            if(FoundFiles == 0 && NbSortsUsed >= 1)
+            if(FoundFiles == 0 && NbSortsUsed >= 1 || FoundWords == 0)
             {
                 MessageBox.Show("Aucun fichier ne correspond aux critères de recherche.");
             }
@@ -215,6 +201,17 @@ namespace Finder.Class
         public void ReadFile(string selectPath, string selectFile)
         {
             Process.Start(Path.Combine(selectPath, selectFile));
+        }
+
+        public void ShowFiles(Finder FileFinder, FileInfo file, string user, System.DateTime lastModified)
+        {
+            ListViewItem lvi = new ListViewItem();
+
+            FileFinder.lst_files.Items.Add(lvi);
+            lvi.Text = file.Name;
+            lvi.SubItems.Add(file.Length.ToString() + " octets");
+            lvi.SubItems.Add(user.ToString());
+            lvi.SubItems.Add(lastModified.ToString());
         }
     }
 }
