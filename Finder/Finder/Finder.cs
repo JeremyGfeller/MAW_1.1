@@ -49,7 +49,14 @@ namespace Finder
                 else
                 {
                     bool HasFile = false;
-                    repository.openRep(selectPath, HasFile);
+                    try
+                    {
+                        repository.openRep(selectPath, HasFile);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Le répertoire n'est pas valide");
+                    }
                 }
             }
         }
