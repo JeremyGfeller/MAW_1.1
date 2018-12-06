@@ -198,7 +198,7 @@
             this.btn_openDirectory.Name = "btn_openDirectory";
             this.btn_openDirectory.Size = new System.Drawing.Size(146, 23);
             this.btn_openDirectory.TabIndex = 24;
-            this.btn_openDirectory.Text = "Ouvrir le répértoire ";
+            this.btn_openDirectory.Text = "Ouvrir le répertoire ";
             this.btn_openDirectory.UseVisualStyleBackColor = true;
             this.btn_openDirectory.Click += new System.EventHandler(this.btn_openDirectory_Click);
             // 

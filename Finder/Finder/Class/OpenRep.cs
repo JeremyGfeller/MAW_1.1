@@ -4,14 +4,21 @@ namespace Finder.Class
 {
     class OpenRep
     {
-        public void openRep(string pathDirectory)
+        public void openRep(string pathDirectory, bool HasFile)
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo
+            if(HasFile)
             {
-                Arguments = pathDirectory,
-                FileName = "explorer.exe"
-            };
-            Process.Start(startInfo);
+                string cmd = "explorer.exe";
+                string arg = "/select," + pathDirectory;
+                Process.Start(cmd, arg);
+            }
+            else
+            {
+                string cmd = pathDirectory;
+                string arg = "explorer.exe";
+                Process.Start(cmd, arg);
+            }
+                
         }
     }
 }

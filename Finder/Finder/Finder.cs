@@ -19,7 +19,7 @@ namespace Finder
         {
             InitializeComponent();
         }
-
+        
         public void btn_path_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog fbd = new FolderBrowserDialog())
@@ -40,25 +40,31 @@ namespace Finder
             }
             else
             {
-                repository.openRep(selectPath);
+                if (lst_files.SelectedItems.Count != 0) //If a item is selected, focus item on the folder, else open folder without focus
+                {
+                    string selectPathAndFile = selectPath + "\\" + lst_files.SelectedItems[0].Text + "\\";
+                    bool HasFile = true;
+                    repository.openRep(selectPathAndFile, HasFile);
+                }
+                else
+                {
+                    bool HasFile = false;
+                    repository.openRep(selectPath, HasFile);
+                }
             }
         }
 
         // Fonction qui ouvre un fichier seléctionné
         private void btn_openFichier_Click(object sender, EventArgs e)
         {
-            selectFile = lst_files.SelectedItems[0].Text;
-            if (string.IsNullOrEmpty(selectPath))
+            if (lst_files.SelectedItems.Count != 0)
             {
-                MessageBox.Show("Aucun répertoire n'a été sélectionné.");
-            }
-            else if (string.IsNullOrEmpty(selectPath))
-            {
-                MessageBox.Show("Aucun fichier n'a été sélectionné.");
+                selectFile = lst_files.SelectedItems[0].Text;
+                files.ReadFile(selectPath, selectFile);
             }
             else
             {
-                files.ReadFile(selectPath, selectFile);
+                MessageBox.Show("Aucun fichier n'a été sélectionné.");
             }
         }
 
@@ -73,15 +79,15 @@ namespace Finder
                 }
                 catch
                 {
-                    MessageBox.Show("Le dossier selectionné n'existe pas");
+                    MessageBox.Show("Le dossier sélectionné n'existe pas.");
                 }
             }
             else
             {
-                MessageBox.Show("Aucun dossier selectionné");
+                MessageBox.Show("Aucun dossier sélectionné.");
             }
         }
-
+        
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             txt_keyWord.Clear();

@@ -13,6 +13,17 @@ namespace Finder.Class
             DirectoryInfo d = new DirectoryInfo(path);//Assuming Test is your Folder
             FileInfo[] Files = d.GetFiles("*.*"); //Getting Text files
 
+            int FoundFiles = 0; //Variable to calcule the number of files found
+            
+            //Variables used for compare how many sorts are used with how many sorts corresponds with the items found
+            int NbSortsUsed = 0; //Variable to count the number of sorts
+            int NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
+
+            if (Files.Count() == 0)
+            {
+                MessageBox.Show("Il n'existe aucun fichier dans le dossier sélectionné.");
+            }
+
             foreach (FileInfo file in Files)
             {
 
@@ -33,8 +44,8 @@ namespace Finder.Class
                 Class.SortFilename sortFilename = new Class.SortFilename();                
 
                 //Variables used for compare how many sorts are used with how many sorts corresponds with the items found
-                int NbSortsUsed = 0; //Variable to count the number of sorts
-                int NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
+                NbSortsUsed = 0; //Variable to count the number of sorts
+                NbSortsRight = 0; //Variable to count the number of items who correspond to the sort
 
                 //Sort by author
                 if (FileFinder.txt_author.Text != "") //If the sort isn't empty, increment NbSortsUsed
@@ -68,11 +79,13 @@ namespace Finder.Class
                         NbSortsRight++;
                     }
                 }
-                
 
                 //Compares if the numbers of sorts and the nombers of items who corresponds with the sort are similar
                 if (NbSortsUsed == NbSortsRight)
                 {
+                    //Count the number of files find
+                    FoundFiles++;
+
                     //Search word. The if is there to prevent of waste useless time in reading files who aren't in the others sorts
                     if (FileFinder.txt_keyWord.Text != "")
                     {
@@ -95,7 +108,7 @@ namespace Finder.Class
                                 }
                                 catch
                                 {
-                                    MessageBox.Show("Une erreur est survenue, un document word est peut-être ouvert");
+                                    MessageBox.Show("Une erreur est survenue, un document word est peut-être ouvert.");
                                 }
                                 break;
                             case "xls":
@@ -114,7 +127,7 @@ namespace Finder.Class
                                 }
                                 catch
                                 {
-                                    MessageBox.Show("Une erreur est survenue, un tableau excel est peut-être ouvert");
+                                    MessageBox.Show("Une erreur est survenue, un tableau excel est peut-être ouvert.");
                                 }
                                 break;
                             case "ppt":
@@ -136,7 +149,7 @@ namespace Finder.Class
                                 }
                                 catch
                                 {
-                                    MessageBox.Show("Une erreur est survenue, un document pdf est peut-être ouvert");
+                                    MessageBox.Show("Une erreur est survenue, un document pdf est peut-être ouvert.");
                                 }
                                 break;
                             //Image format
@@ -177,7 +190,7 @@ namespace Finder.Class
                                 }
                                 catch
                                 {
-                                    MessageBox.Show("Une erreur est survenue, un document compatible a windows est peut-être ouvert");
+                                    MessageBox.Show("Une erreur est survenue, un document compatible a windows est peut-être ouvert.");
                                 }
                                 break;
                         }
@@ -191,6 +204,11 @@ namespace Finder.Class
                         lvi.SubItems.Add(lastModified.ToString());
                     }
                 }
+            }
+
+            if(FoundFiles == 0 && NbSortsUsed >= 1)
+            {
+                MessageBox.Show("Aucun fichier ne correspond aux critères de recherche.");
             }
         }
 
