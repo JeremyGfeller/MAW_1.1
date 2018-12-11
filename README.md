@@ -6,4 +6,4 @@ Le but est de rechercher des des fichiers dans un répertoire sélectionné. Il 
 
 ## Installation du projet 
 
-Télécharger en local uniquement le dossier [exécutable]() et lancer le fichier .exe à l'intérieur pour pouvoir lancer notre application  
+Télécharger en local uniquement le dossier [exécutable](https://github.com/JeremyGfeller/MAW_1.1/tree/master/ex%C3%A9cutable) et lancer le fichier .exe à l'intérieur pour pouvoir lancer notre application  
