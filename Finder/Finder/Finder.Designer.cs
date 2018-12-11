@@ -55,9 +55,9 @@
             // btn_path
             // 
             this.btn_path.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_path.Location = new System.Drawing.Point(286, 76);
+            this.btn_path.Location = new System.Drawing.Point(131, 89);
             this.btn_path.Name = "btn_path";
-            this.btn_path.Size = new System.Drawing.Size(106, 27);
+            this.btn_path.Size = new System.Drawing.Size(151, 27);
             this.btn_path.TabIndex = 11;
             this.btn_path.Text = "Sélectionner";
             this.btn_path.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // txt_path
             // 
             this.txt_path.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_path.Location = new System.Drawing.Point(53, 77);
+            this.txt_path.Location = new System.Drawing.Point(53, 126);
             this.txt_path.Name = "txt_path";
-            this.txt_path.Size = new System.Drawing.Size(210, 26);
+            this.txt_path.Size = new System.Drawing.Size(314, 26);
             this.txt_path.TabIndex = 12;
             // 
             // label1
@@ -94,43 +94,47 @@
             // lbl_keyWord
             // 
             this.lbl_keyWord.AutoSize = true;
-            this.lbl_keyWord.Location = new System.Drawing.Point(507, 75);
+            this.lbl_keyWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_keyWord.Location = new System.Drawing.Point(506, 76);
             this.lbl_keyWord.Name = "lbl_keyWord";
-            this.lbl_keyWord.Size = new System.Drawing.Size(52, 13);
+            this.lbl_keyWord.Size = new System.Drawing.Size(77, 20);
             this.lbl_keyWord.TabIndex = 15;
             this.lbl_keyWord.Text = "Mots-clés";
             // 
             // lbl_author
             // 
             this.lbl_author.AutoSize = true;
-            this.lbl_author.Location = new System.Drawing.Point(812, 75);
+            this.lbl_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_author.Location = new System.Drawing.Point(811, 76);
             this.lbl_author.Name = "lbl_author";
-            this.lbl_author.Size = new System.Drawing.Size(38, 13);
+            this.lbl_author.Size = new System.Drawing.Size(57, 20);
             this.lbl_author.TabIndex = 16;
             this.lbl_author.Text = "Auteur";
             // 
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(507, 134);
+            this.lbl_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_date.Location = new System.Drawing.Point(506, 134);
             this.lbl_date.Name = "lbl_date";
-            this.lbl_date.Size = new System.Drawing.Size(104, 13);
+            this.lbl_date.Size = new System.Drawing.Size(155, 20);
             this.lbl_date.TabIndex = 17;
             this.lbl_date.Text = "Date de modification";
             // 
             // lbl_files
             // 
             this.lbl_files.AutoSize = true;
-            this.lbl_files.Location = new System.Drawing.Point(812, 135);
+            this.lbl_files.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_files.Location = new System.Drawing.Point(811, 135);
             this.lbl_files.Name = "lbl_files";
-            this.lbl_files.Size = new System.Drawing.Size(75, 13);
+            this.lbl_files.Size = new System.Drawing.Size(110, 20);
             this.lbl_files.TabIndex = 18;
             this.lbl_files.Text = "Nom du fichier";
             // 
             // txt_keyWord
             // 
             this.txt_keyWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_keyWord.Location = new System.Drawing.Point(510, 91);
+            this.txt_keyWord.Location = new System.Drawing.Point(510, 99);
             this.txt_keyWord.Name = "txt_keyWord";
             this.txt_keyWord.Size = new System.Drawing.Size(259, 26);
             this.txt_keyWord.TabIndex = 19;
@@ -138,7 +142,7 @@
             // txt_author
             // 
             this.txt_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_author.Location = new System.Drawing.Point(815, 92);
+            this.txt_author.Location = new System.Drawing.Point(815, 99);
             this.txt_author.Name = "txt_author";
             this.txt_author.Size = new System.Drawing.Size(259, 26);
             this.txt_author.TabIndex = 20;
@@ -146,7 +150,7 @@
             // txt_date
             // 
             this.txt_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_date.Location = new System.Drawing.Point(510, 150);
+            this.txt_date.Location = new System.Drawing.Point(510, 157);
             this.txt_date.Name = "txt_date";
             this.txt_date.Size = new System.Drawing.Size(259, 26);
             this.txt_date.TabIndex = 21;
@@ -154,13 +158,14 @@
             // txt_file
             // 
             this.txt_file.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_file.Location = new System.Drawing.Point(815, 151);
+            this.txt_file.Location = new System.Drawing.Point(815, 158);
             this.txt_file.Name = "txt_file";
             this.txt_file.Size = new System.Drawing.Size(259, 26);
             this.txt_file.TabIndex = 22;
             // 
             // lst_files
             // 
+            this.lst_files.BackColor = System.Drawing.SystemColors.Window;
             this.lst_files.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.NomFichier,
             this.Taille,
@@ -176,22 +181,22 @@
             // NomFichier
             // 
             this.NomFichier.Text = "Nom";
-            this.NomFichier.Width = 300;
+            this.NomFichier.Width = 359;
             // 
             // Taille
             // 
             this.Taille.Text = "Taille";
-            this.Taille.Width = 110;
+            this.Taille.Width = 77;
             // 
             // Auteur
             // 
             this.Auteur.Text = "Auteur";
-            this.Auteur.Width = 150;
+            this.Auteur.Width = 243;
             // 
             // Date
             // 
             this.Date.Text = "Date";
-            this.Date.Width = 115;
+            this.Date.Width = 119;
             // 
             // btn_openDirectory
             // 
@@ -216,7 +221,7 @@
             // btn_search
             // 
             this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btn_search.Location = new System.Drawing.Point(510, 196);
+            this.btn_search.Location = new System.Drawing.Point(510, 207);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(259, 28);
             this.btn_search.TabIndex = 24;
@@ -227,7 +232,7 @@
             // btn_cancel
             // 
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btn_cancel.Location = new System.Drawing.Point(815, 196);
+            this.btn_cancel.Location = new System.Drawing.Point(815, 207);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(259, 28);
             this.btn_cancel.TabIndex = 26;
