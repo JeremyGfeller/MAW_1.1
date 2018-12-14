@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>N:\PERSO\ELEVE\SC\INFO\si-t1a\Jeremy.GFELLER\Techniciens ES\MAW1_1_Chevillat\MAW_1.1\exécutable\</PublishUrl>
+    <PublishUrl>P:\CPNV Tech\MAW1_1\MAW_1.1\exécutable\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -149,7 +149,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="VBIDE">
