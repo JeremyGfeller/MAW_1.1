@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Finder.exe" size="130048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Finder.exe" size="20992">
       <assemblyIdentity name="Finder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0JcjWETc0SXD2xaaQWJFd7HJAfk39b+6RISYyhTzxQc=</dsig:DigestValue>
+        <dsig:DigestValue>onj59T8DMdLrQlvP53lwEkGBU9igxDKYxzbKU3PPcDE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
